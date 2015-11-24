@@ -1,0 +1,170 @@
+---
+layout: post
+title: "python猜单词游戏"
+excerpt: ""
+categories: articles
+tags: [python]
+comments: true
+share: true
+---
+Hangman
+------
+
+今天在看别人python博客的时候，发现了博主对python学习的介绍，分享了几个有趣的python网站。
+其中有一个是[Full Stack Python](http://www.fullstackpython.com/)，里面介绍很多关于python的使用手册，覆盖面很广，但是好像主要是在web development上面的。
+虽然自己真的很想学习Python的web framework，但是感觉还是想先dive into data structure之中。Web Framework以后有时间再学吧。
+
+知乎上面有一个关于python博客和阅读资源的回答，感觉很有帮助，发现原来真的有这么多的python使用者，以及用它做着pretty cool的事情。
+[Python 有哪些好的学习资料或者博客？](http://www.zhihu.com/question/34907211)
+
+不扯这些了。之前看到了给Python新手准备的五个迷你项目，刚好今晚没什么事情，就尝试了一下。
+
+[Five mini programming projects for the Python beginner](https://medium.com/learning-journalism-tech/five-mini-programming-projects-for-the-python-beginner-21492f6ce0f3#.r9qg4me1o)
+--------
+
+前四个mini project都很简单，也不免有些无聊，但是也为自己复习了一下最基础的python，比如说a = raw_input()，input一个3，type(a)应该是str...
+当时也傻了半天
+
+代码先贴一下，
+Dice Rolling Simulator
+-------
+{% highlight python %}
+"""
+This is for a mini project that generate random integer between 1 and 6
+"""
+
+from random import randint
+def rolling_dice():
+	n = randint(1,6)
+	print n
+
+def main():
+	rolling_dice()
+	while True:
+		a = raw_input('Do you want to roll dice again? Y/N')
+		if a == 'y' or a == 'Y':
+			rolling_dice()
+		else:
+			break
+
+main()
+{% endhighlight %}
+
+Guess the number
+------
+{% highlight python %}
+from random import randint
+
+def capture():
+	try:
+		a = int(raw_input('This is a number between 1 to 100, please guess'))
+	except ValueError:
+		print 'you should type a integer'
+		capture()
+
+def main():
+	answer = randint(1,100)
+	
+	a = capture()
+	count = 1
+	while True:
+		
+		if a < answer:
+			a = int(raw_input('too low, guess again'))
+			count += 1
+		elif a > answer:
+			a = int(raw_input('too high, guess again'))
+			count += 1
+		elif a == answer:
+			print 'That\'s right!, the right answer is %d, you only take %d steps' %(a, count)
+			break
+	
+main()
+{% endhighlight %}
+
+Hangman
+-----
+{% highlight python %}
+"""
+This project is to create a sort of "guess the word" game.
+"""
+def main():
+	answer = raw_input('please type the word')
+	# dic save all the letters of the answer
+	dic = {}
+	num_of_word = 0
+	for i,n in enumerate(answer):
+		num_of_word += 1
+		dic[i] = n
+
+	all_times = 0
+	place = {}
+	for n in range(num_of_word):
+		place[n] = None
+
+	while True:
+		guess_word = str(raw_input('there is %d letters, please pick a letter '% num_of_word))
+		times = 0
+
+		DRAW = False
+		for n in dic:
+			if dic[n] == guess_word:
+				place[n] = guess_word
+				times += 1
+				DRAW = True
+
+		if not DRAW:
+			print 'guess again'
+
+		all_times = all_times + times
+
+		if DRAW:		
+			draw_word(place)
+
+		if all_times == num_of_word:
+			break
+			
+def draw_word(dic):
+	for i in dic:
+		if dic[i] == None:
+			print '_',
+		else:
+			print dic[i],
+
+if __name__ == '__main__':
+	main()
+{% endhighlight %}
+
+值得一提的是最后一个mini project，简单是很简单，但是自己一开始做的时候却忘记了dictionary直接把位置和字母匹配，
+结果写了一段很奇怪的draw_word()，这里也po上来吧，免得以后自己再犯这种奇怪的错误。
+{% highlight python %}
+def draw_word2(letter, place, num_of_word, times):
+	"""
+	an example of place
+	0, 1, 2 is the occuring times of the letter
+	place = {0 : 1, 1 : 3, 2 : 6}
+	"""
+	string = []
+
+	for i, n in enumerate(place):
+		if n == 0:
+			string.append('_ '*place[n]+letter)
+		else:
+			string.append('_ '*(place[n] - place[n - 1] - 1) + letter)
+
+	r_word = ''
+	for i, n in enumerate(string):
+		r_word += string[i]
+		r_word += ' '
+
+	r_word = r_word + ' _'*(num_of_word - place[times-1] -1)
+	print r_word
+{% endhighlight %}
+
+> ##Life is short, You need Python.
+
+顺便Po个算法题，下次有空写。
+
+> ####有 n 个已排好序的 list 存着 integer ，返回其中出现次数大于 K 的数字，一个 list 中重复的数字只算出现一次，也就是说一个数在 n 个 list 中最多出现 n 次。结果按照出现的次数从小到大排序输出。
+
+
