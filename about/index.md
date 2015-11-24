@@ -4,7 +4,7 @@ title: About Me
 excerpt: "I'm Ryan Yuan"
 modified: 2014-08-08T19:44:38.564948-04:00
 image:
-  feature: so-simple-sample-image-4.jpg
+  feature: Joshua Earle.jpg
   credit: Joshua Earle
   creditlink: https://unsplash.com/photos/ZMcLVBi9xx4
 ---
