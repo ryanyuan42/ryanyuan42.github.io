@@ -1,11 +1,11 @@
 # Site wide configuration
 
-title: Site Title
+title: Ryan Yuan
 locale: en_US
-description: Describe your website here.
+description: Ryan Yuan's Blog
 logo: site-logo.png
 search: true
-url: http://localhost:4000
+url: http://ryanyuan42.github.io
 
 # Jekyll configuration
 
@@ -33,9 +33,9 @@ exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.
 
 # Site owner
 owner:
-  name: Your Name
+  name: Ryan Yuan
   avatar: bio-photo.jpg
-  email: you@email.com
+  email: ryan.yuan@berkeley.edu
   disqus-shortname:
   twitter: #username
   facebook: #username
