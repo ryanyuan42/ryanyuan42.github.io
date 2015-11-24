@@ -81,14 +81,16 @@ print(sumOfN3(10))
 * Best case
 * Worst case
 * average case 
+
 通常可见的order of magnitude是：
-* $$1$$
-* $$log(n)$$
-* $$n$$
-* $$nlogn$$
-* $$n^2$$
-* $$n^3$$
-* $$2^n$$
+
+*  $$1$$
+*  $$log(n)$$
+*  $$n$$
+*  $$nlogn$$
+*  $$n^2$$
+*  $$n^3$$
+*  $$2^n$$
 
 增长速度$$1 < log(n) < n < nlog(n) < n^2 < n^3 < 2^n$$
 
