@@ -1,7 +1,11 @@
 ---
 layout: post
-title: Wall Street Journal's Journal
-categories: "Wall_Street_Journal's_Journal"
+title: "Wall Street Jounral's Journal"
+excerpt: ""
+categories: articles
+tags: [python]
+comments: true
+share: true
 ---
 2015.10.17
 
