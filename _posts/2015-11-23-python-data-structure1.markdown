@@ -5,7 +5,7 @@ excerpt: "再入新坑"
 categories: articles
 tags: [python, data structure]
 image:
-  feature: so-simple-sample-image-2.jpg
+  feature: 
 comments: true
 share: true
 ---
@@ -17,7 +17,7 @@ Thanksgiving只能呆家里，开个Python Data Structure的坑
 
 先来比较一下下面两段代码的不同之处，他们都是解决相同的问题。
 
-```
+{% highlight python %}
 def sumOfN(n):
    theSum = 0
    for i in range(1,n+1):
@@ -26,9 +26,9 @@ def sumOfN(n):
    return theSum
 
 print(sumOfN(10))
-```
+{% endhighlight %}
 
-```
+{% highlight python %}
 def foo(tom):
     fred = 0
     for bill in range(1,tom+1):
@@ -38,7 +38,7 @@ def foo(tom):
     return fred
 
 print(foo(10))
-```
+{% endhighlight %}
 上面两段代码都是用来求和的。
 明显第二段代码更难读，
 然而Algorithm analysis应该专注的点是the amount of computing resources that each algorithm uses. 
@@ -47,12 +47,12 @@ print(foo(10))
 1,000,000次的叠加大概花了0.19 秒左右。
 
 现在来看第三段代码，
-```
+{% highlight python %}
 def sumOfN3(n):
    return (n*(n+1))/2
 
 print(sumOfN3(10))
-``` 
+{% endhighlight %}
 同样是计算1,000,000的sum up，花掉的时间是0.00000095秒
 如果用这段代码计算10,000,000, 100,000,000呢？
 
@@ -95,7 +95,7 @@ print(sumOfN3(10))
 ![resources the code take](http://interactivepython.org/courselib/static/pythonds/_images/newplot.png)
 
 最后一个例子：
-{% highlight python%}
+{% highlight python %}
 a=5
 b=6
 c=10
