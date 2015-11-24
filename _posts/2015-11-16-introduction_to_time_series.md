@@ -1,8 +1,11 @@
 ---
 layout: post
-title:  "Introduction to Time Series"
-date:   2015-09-12 19:23:19
-categories: Introduction_to_Time_Series
+title: "python模拟登录知乎"
+excerpt: ""
+categories: articles
+tags: [python]
+comments: true
+share: true
 ---
 Some Simple Time Series Models
 -------
