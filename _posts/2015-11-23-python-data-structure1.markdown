@@ -1,3 +1,14 @@
+---
+layout: post
+title: "python data structure(0)"
+excerpt: "再入新坑"
+categories: articles
+tags: [python, data structure]
+image:
+  feature: so-simple-sample-image-2.jpg
+comments: true
+share: true
+---
 Thanksgiving只能呆家里，开个Python Data Structure的坑
 
 废话少说，现在就开始。
