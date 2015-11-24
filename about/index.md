@@ -1,26 +1,24 @@
 ---
 layout: page
-title: About the Jekyll Theme
-excerpt: "So Simple is a responsive Jekyll theme for your words and images."
+title: About Me
+excerpt: "I'm Ryan Yuan"
 modified: 2014-08-08T19:44:38.564948-04:00
 image:
   feature: so-simple-sample-image-4.jpg
-  credit: WeGraphics
-  creditlink: http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/
+  credit: Joshua Earle
+  creditlink: https://unsplash.com/photos/ZMcLVBi9xx4
 ---
 
-Looking for a simple, responsive, theme for your Jekyll powered blog? Well look no further. Here be **So Simple Theme**, the follow up to [**Minimal Mistakes**](http://mmistakes.github.io/minimal-mistakes) --- by designer slash illustrator [Michael Rose](http://mademistakes.com).
+## 漂流在外的大三学生
 
-## So Simple Theme is all about:
+建此博客：
+* 成为一名quant
+* 记录python, Time Series, C++等学科的过程
+* 记录一年在外的生活
 
-* Responsive templates. Looking good on mobile, tablet, and desktop.
-* Gracefully degrading in older browsers. Compatible with Internet Explorer 9+ and all modern browsers.
-* Minimal embellishments and subtle animations.
-* Optional large feature images for posts and pages.
-* [Custom 404 page]({{ site.url }}/404.html) to get you started.
-* [Simple site search](https://github.com/christian-fei/Simple-Jekyll-Search)
-* Support for Disqus Comments
+## A Junior orginated from SUFE, studying at UCB currently 
 
-<a markdown="0" href="{{ site.url }}/theme-setup" class="btn">Install So Simple Theme</a>
-
-[^1]: Example: *domain.com/category-name/post-title*
+This Site:
+* Wish to become a quant. Hope it can help me
+* Record the my learning process of python, Time Series, C++, etc.
+* Witness my life here in UCB.
