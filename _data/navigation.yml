@@ -5,6 +5,9 @@
 
 - title: 博客
   url: /articles/
-
+  
+- title: 标签
+  url: /tags/
+  
 - title: 搜索
   url: /search/
