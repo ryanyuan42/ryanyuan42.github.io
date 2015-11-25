@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Posts
+title: Main Stacks
 excerpt: "An archive of articles sorted by date."
 search_omit: true
 ---
