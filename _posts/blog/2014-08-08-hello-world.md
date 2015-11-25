@@ -7,6 +7,8 @@ excerpt:
 tags: []
 image:
   feature:
+comments: true
+share: true
 date: 1987-09-20 
 ---
 
