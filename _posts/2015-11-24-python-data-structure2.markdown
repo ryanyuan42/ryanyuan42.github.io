@@ -22,7 +22,7 @@ pythong中有list可以用来存储数据，当数据被这样存储的时候，
 那么它的时间复杂度很明显就是$O(n)$，因为要遍历list中所有的值
 
 | case            | Best Case     | Worst Case  | Average Case|
-| -------------   |:-------------:| -----:------|------------:|
+| -------------   |:-------------:| :----------:|:------------:|
 | item present    |    1          |     $$n$$   |    $$n/2$$  |
 | item not present|  $$n$$        |      $$n$$  | $$n$$       |
 
@@ -75,9 +75,9 @@ def binarySearch(alist, item):
 
 Table 4: Simple Hash Function Using Remainders
 |   Item      |     Hash Value|
-|:--------- : |  :-----------:   |
-|54	      |        10           |
-|26|	4|
+|:-----------:|:-------------:|
+|54	          |        10     |
+|26           |      	4       |
 |93|	5|
 |17|	6|
 |77|	0|
