@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "python统计list中重复次数"
-excerpt: "A ton of text to test readability."
+excerpt: "一次算法小尝试."
 categories: articles
 tags: [python]
 image:
