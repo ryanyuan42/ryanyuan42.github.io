@@ -22,7 +22,7 @@ pythong中有list可以用来存储数据，当数据被这样存储的时候，
 那么它的时间复杂度很明显就是$O(n)$，因为要遍历list中所有的值
 
 | case            | Best Case     | Worst Case  | Average Case|
-| -------------   |:-------------:| :----------:|:------------:|
+| -------------   |:-------------:| :----------:|:-----------:|
 | item present    |    1          |     $$n$$   |    $$n/2$$  |
 | item not present|  $$n$$        |      $$n$$  | $$n$$       |
 
@@ -74,14 +74,15 @@ def binarySearch(alist, item):
 也就是把储存的item，除以哈希表的size，返回余数。拿之前size=11的例子来说，假如item是54,26,93,17,77,31，那就应该那他们除以11，得到余数。
 
 Table 4: Simple Hash Function Using Remainders
+
 |   Item      |     Hash Value|
-|:-----------:|:-------------:|
+| ------------|:-------------:|
 |54	          |        10     |
 |26           |      	4       |
-|93|	5|
-|17|	6|
-|77|	0|
-|31|	9|
+|93           |	5             |
+|17           |	6             |
+|77           |	0             |
+|31           |	9             |
 
 一旦我们有了Hash Value，我们就可以把这些items存放进Hash Table了。
 ![Figure 5: Hash Table with Six Items](http://interactivepython.org/courselib/static/pythonds/_images/hashtable2.png)
