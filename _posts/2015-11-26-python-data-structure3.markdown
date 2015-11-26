@@ -27,14 +27,14 @@ CS中的世界中有许多许多的排序算法，今天就让我们来一探究
 代码实现起来是这样：
 {% highlight python %}
 def bubbleSort(alist):
-	for passnum in range(len(alist)-1, 0, -1):
-		for n in range(passnum):
-			if alist[n] > alist[n+1]:
-				temp = alist[n]
-				alist[n] = alist[n+1]
-				alist[n+1] = temp
+	  for passnum in range(len(alist)-1, 0, -1):
+		  for n in range(passnum):
+			  if alist[n] > alist[n+1]:
+				  temp = alist[n]
+				  alist[n] = alist[n+1]
+				  alist[n+1] = temp
 
-	return alist
+	  return alist
 {% endhighlight %}
 
 但是这样做有点太浪费了。比如说如果在某一个传递过程中没有任何交换，那证明这个list已经是排序好了的。
@@ -48,19 +48,19 @@ def bubbleSort(alist):
 代码实现如下：
 {% highlight python %}
 def short_bubbleSort(alist):
-	exchange = True
-	passnum = len(alist) - 1 # max = n - 1
-	while passnum > 0 and exchange:
-		exchange = False
-		for n in range(passnum):
-			if alist[n] > alist[n+1]:
-				exchange = True
-				temp = alist[n]
-				alist[n] = alist[n+1]
-				alist[n+1] = temp
-		passnum -= 1
+	  exchange = True
+	  passnum = len(alist) - 1 # max = n - 1
+	  while passnum > 0 and exchange:
+		  exchange = False
+		  for n in range(passnum):
+			  if alist[n] > alist[n+1]:
+				  exchange = True
+				  temp = alist[n]
+				  alist[n] = alist[n+1]
+				  alist[n+1] = temp
+		  passnum -= 1
 
-	return alist
+	  return alist
 {% endhighlight %}
 
 我们来分析一下Bubble Sort的效率，之前分析到，第一次传递有n-1次比较，第二次有n-2次比较，....第n-1次有1次比较。
@@ -75,18 +75,18 @@ def short_bubbleSort(alist):
 代码实现如下：
 {% highlight python %}
 def selectionSort(alist):
-	passnum = len(alist) - 1
-	while passnum > 0:
-		maxium = max(alist[:(passnum+1)])
-		maxium_pos = alist.index(maxium)
+	  passnum = len(alist) - 1
+	  while passnum > 0:
+		  maxium = max(alist[:(passnum+1)])
+		  maxium_pos = alist.index(maxium)
 
-		temp = alist[maxium_pos]
-		alist[maxium_pos] = alist[passnum]
-		alist[passnum] = temp
+		  temp = alist[maxium_pos]
+		  alist[maxium_pos] = alist[passnum]
+		  alist[passnum] = temp
 
-		passnum -= 1
+		  passnum -= 1
 	
-	return alist
+	  return alist
 {% endhighlight %}
 
 Selection的时间复杂度依旧是$$O(n^2)$$。但是由于交换次数的减少，选择排序法一般要快一点。
@@ -100,18 +100,18 @@ Selection的时间复杂度依旧是$$O(n^2)$$。但是由于交换次数的减�
 代码实现如下：
 {% highlight python %}
 def insertionSort(alist):
-	for index in range(1, len(alist)):
+	  for index in range(1, len(alist)):
 
-		currentvalue = alist[index]
-		pos = index
+		  currentvalue = alist[index]
+		  pos = index
 
-		while pos > 0 and alist[pos-1] > currentvalue:
-			alist[pos] = alist[pos - 1]
-			pos -= 1
+		  while pos > 0 and alist[pos-1] > currentvalue:
+			  alist[pos] = alist[pos - 1]
+			  pos -= 1
 
-		alist[pos] = currentvalue
+		  alist[pos] = currentvalue
 
-	return alist
+	  return alist
 {% endhighlight %}
 
 即使这样我们依旧需要n-1次的传递来排序，最大的比较次数依旧是n-1之和。所以它的时间复杂度还是$$O(n^2)$$
@@ -142,7 +142,7 @@ Figure 8: ShellSort: A Final Insertion Sort with Increment of 1
 代码实现如下：
 {% highlight python %}
 def shellSort(alist):
-    sublistcount = len(alist)//2
+     sublistcount = len(alist)//2
     while sublistcount > 0:
 
       for startposition in range(sublistcount):
