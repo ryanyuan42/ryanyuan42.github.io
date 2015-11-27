@@ -125,9 +125,11 @@ def insertionSort(alist):
 
 ###The Shell Sort
 ![enter image description here](http://interactivepython.org/courselib/static/pythonds/_images/shellsortA.png)
+
 Figure 6: A Shell Sort with Increments of Three
 
 ![enter image description here](http://interactivepython.org/courselib/static/pythonds/_images/shellsortB.png)
+
 Figure 7: A Shell Sort after Sorting Each Sublist
 
 看图应该很好理解，就是把原本是9个数的list，分成3个sublist，然后去sort这三个sublist，最后整合为一个list。然后再对这个list使用标准的insertion sort
@@ -170,9 +172,11 @@ def gapInsertionSort(alist,start,gap):
 
 ###Merge Sort
 ![enter image description here](http://interactivepython.org/courselib/static/pythonds/_images/mergesortA.png)
+
 *Figure 10: Splitting the List in a Merge Sort*
 
 ![enter image description here](http://interactivepython.org/courselib/static/pythonds/_images/mergesortB.png)
+
 *Figure 11: Lists as They Are Merged Together*
 
 很明显的分治策略，但是自己用代码实现只能想到spilit，不知道该如何merge起来，或者说自己用来merge的方法太丑陋了。下面的算法真是精彩，通过直接的recursive，并且在后面加判断代码。
