@@ -254,47 +254,45 @@ partition这个过程一开始会定位两个位置标记点，我们把它们�
  2. 接着是快排函数，拿到**split point**，然后快排left **half**和**right half**，循环停止的判断设为first < last，因为最后会只剩下一个值，first = last，循环也就停止了。
 
 {% highlight python %}
-        
-      def partition(alist, first, last):
-        pivotvalue = alist[first]
-    
-        leftmark = first + 1
-        rightmark = last
-    
-        done = False
-        while not done:
-            while leftmark <= rightmark and alist[leftmark] <= pivotvalue:
-                leftmark += 1
-    
-            while leftmark <= rightmark and alist[rightmark] >= pivotvalue:
-                rightmark -= 1
-    
-            if leftmark < rightmark:
-                temp = alist[leftmark]
-                alist[leftmark] = alist[rightmark]
-                alist[rightmark] = temp
-            else:
-                done = True
-    
-        temp = alist[first]
-        alist[first] = alist[rightmark]
-        alist[rightmark] = temp
-    
-        return rightmark
-    
-      def quickSort(alist, first, last):
-        if first < last:
-    
-            splitpoint = partition(alist, first, last)
-    
-            quickSort(alist, first, splitpoint - 1)
-            quickSort(alist, splitpoint+1, last)
-    
-    
-      def quickSort_wrapped(alist):
-        quickSort(alist, 0, len(alist) -1)
-        return alist
+def partition(alist, first, last):
+    pivotvalue = alist[first]
 
+    leftmark = first + 1
+    rightmark = last
+
+    done = False
+    while not done:
+        while leftmark <= rightmark and alist[leftmark] <= pivotvalue:
+            leftmark += 1
+
+        while leftmark <= rightmark and alist[rightmark] >= pivotvalue:
+            rightmark -= 1
+
+        if leftmark < rightmark:
+            temp = alist[leftmark]
+            alist[leftmark] = alist[rightmark]
+            alist[rightmark] = temp
+        else:
+            done = True
+
+    temp = alist[first]
+    alist[first] = alist[rightmark]
+    alist[rightmark] = temp
+
+    return rightmark
+
+def quickSort(alist, first, last):
+    if first < last:
+
+        splitpoint = partition(alist, first, last)
+
+        quickSort(alist, first, splitpoint - 1)
+        quickSort(alist, splitpoint+1, last)
+
+
+def quickSort_wrapped(alist):
+    quickSort(alist, 0, len(alist) -1)
+    return alist
 {% endhighlight %}
 
 ####快排分析
