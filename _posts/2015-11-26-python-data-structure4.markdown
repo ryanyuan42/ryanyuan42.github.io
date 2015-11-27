@@ -31,7 +31,9 @@ def test3():
 
 def test4():
     l = list(range(1000))
+{% endhighlight %}
 
+{% highlight python %}
 from timeit import Timer
 t1 = Timer("test1()", "from __main__ import test1")
 print("concat ",t1.timeit(number=1000), "milliseconds")
@@ -57,9 +59,8 @@ print("pop_zero ",pop_zero.timeit(number=1000), "milliseconds")
 x = list(range(2000000))
 pop_end = Timer("x.pop()","from __main__ import x")
 print("pop_end ",pop_end.timeit(number=1000), "milliseconds")
-
- ('pop_zero ', 1.9101738929748535, 'milliseconds')
- ('pop_end ', 0.00023603439331054688, 'milliseconds')
+('pop_zero ', 1.9101738929748535, 'milliseconds')
+('pop_end ', 0.00023603439331054688, 'milliseconds')
 {% endhighlight %}
 
 可以看出来pop(0)显著慢于pop( )，这是因为pop(0)的效率是$$O(n)$$，而pop( )的效率是$$O(1)$$
@@ -128,7 +129,7 @@ def matches(open,close):
 ![enter image description here](http://interactivepython.org/courselib/static/pythonds/_images/dectobin.png)
 
 
-{% highlight python%}
+{% highlight python %}
 from pythonds.basic.stack import Stack
 
 def divideBy2(decNumber):
@@ -148,7 +149,7 @@ def divideBy2(decNumber):
 
 这里通过stack.pop()的方法把最后一个值取出来
 
-{% highlight python%}
+{% highlight python %}
 from pythonds.basic.stack import Stack
 
 def baseConverter(decNumber,base):
