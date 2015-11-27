@@ -46,7 +46,6 @@ print("list range ",t4.timeit(number=1000), "milliseconds")
 ('append ', 0.16156369398242854, 'milliseconds')
 ('comprehension ', 0.05943448886932545, 'milliseconds')
 ('list range ', 0.01438837025122508, 'milliseconds')
-
 {% endhighlight %}
 
 显然可以看出，使用list的加法最慢，append更快，而直接用range生成一个list是最快的。
