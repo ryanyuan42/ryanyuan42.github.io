@@ -254,8 +254,8 @@ partition这个过程一开始会定位两个位置标记点，我们把它们�
  2. 接着是快排函数，拿到**split point**，然后快排left **half**和**right half**，循环停止的判断设为first < last，因为最后会只剩下一个值，first = last，循环也就停止了。
 
 {% highlight python %}
-
-    def partition(alist, first, last):
+        
+      def partition(alist, first, last):
         pivotvalue = alist[first]
     
         leftmark = first + 1
@@ -282,7 +282,7 @@ partition这个过程一开始会定位两个位置标记点，我们把它们�
     
         return rightmark
     
-    def quickSort(alist, first, last):
+      def quickSort(alist, first, last):
         if first < last:
     
             splitpoint = partition(alist, first, last)
@@ -291,7 +291,7 @@ partition这个过程一开始会定位两个位置标记点，我们把它们�
             quickSort(alist, splitpoint+1, last)
     
     
-    def quickSort_wrapped(alist):
+      def quickSort_wrapped(alist):
         quickSort(alist, 0, len(alist) -1)
         return alist
 
@@ -310,7 +310,7 @@ partition这个过程一开始会定位两个位置标记点，我们把它们�
 >  2. A binary search of an ordered list is $$O(logn)$$ in the worst case.
 >  3. Hash tables can provide constant time searching. $$O(1)$$
 >   * 但是Hash Table的性能也受到load factor的约束，α越小，标明填入表中的元素越少，产生冲突的可能性就越小。对于使用开放寻址法，线性探测的哈希表，successful research下的平均比较数为$$\frac{1}{2}(1+\frac{1}{1-\lambda})$$，unsuccessful research下的平均比较数为$$\frac{1}{2}(1+(\frac{1}{1-\lambda})^2)$$
->  4. A bubble sort, a selection sort, and an insertion sort are$$O(n^2)$$ algorithms.
+>  4. A bubble sort, a selection sort, and an insertion sort are $$O(n^2)$$ algorithms.
 >  5. A shell sort improves on the insertion sort by sorting incremental sublists. It falls between $$O(n)$$ and $$O(n2)$$.
 >  6. A merge sort is $$O(nlogn)$$, but requires additional space for the merging process.
 >  7. A quick sort is $$O(nlogn)$$, but may degrade to $$O(n^2)$$ if the split points are not near the middle of the list. It does not require additional space.
