@@ -93,7 +93,7 @@ for i in range(10000,1000001,20000):
 
 
 ###利用Stack做一个括号检查器
-{ % highlight python %}
+{% highlight python %}
 from pythonds.basic.stack import Stack
 
 def parChecker(symbolString):
