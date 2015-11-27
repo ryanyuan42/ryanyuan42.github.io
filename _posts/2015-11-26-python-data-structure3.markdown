@@ -218,6 +218,101 @@ def mergeSort(alist):
 
 明天看快排，今天内容有点多，可能需要理解一会儿。
 
+快排同样是使用的分支策略，就像Merge Sort一样，但是却不要求额外的存储空间。但是有可能出现List没有被一分为二，这种情况发生的话，它的优势就消失了。
 
-----------
-*To be continued*
+快排首先选择一个值，我们把它叫做**Pivot Value**。这里我们就简单地选用第一个值作为**pivot value**。pivot value的主要功能就是去split the list。而pivot value最后待的位置（排序完的位置），被称作**split point**，分裂点。
+
+![Figure 12: The First Pivot Value for a Quick Sort](http://interactivepython.org/courselib/static/pythonds/_images/firstsplit.png)
+
+*Figure 12: The First Pivot Value for a Quick Sort*
+
+我们知道54最后会出现在31的位置上。
+
+接下来，叫做partition的过程会发生，它将找到那个**split point**，接着会把list中的其他值根据和**pivot value**的大小比较，放到spilit point的左边或者右边。
+
+partition这个过程一开始会定位两个位置标记点，我们把它们称作`leftmark` 和 `rightmark`，下面是一个过程图。 
+
+![Figure 13: Finding the Split Point for 54](http://interactivepython.org/courselib/static/pythonds/_images/partitionA.png)
+
+*Figure 13: Finding the Split Point for 54*
+
+从过程图我们可以看出来的是，partition过程开始后，会开始寻找`leftmark`和`rightmark`, 而`leftmark`应该比**pivot value**要大，`rightmark`应该比**pivot value**要小。
+
+找了一对`leftmark`和`rightmark`之后，就对他们进行交换，接着继续去找下一对`leftmark`和`rightmark`。
+
+直到最后，`leftmark`和`rightmark`的位置交叉而过，也就是`rightmark`小于`leftmark`的时候，`rightmark`所在的位置就是我们**pivot value**最后应该待的地方了，也就是找到了**split point**，然后交换54和31。
+
+![Figure 14: Completing the Partition Process to Find the Split Point for 54](http://interactivepython.org/courselib/static/pythonds/_images/partitionB.png)
+
+*Figure 14: Completing the Partition Process to Find the Split Point for 54*
+
+在**split point**分开list，然后再去快排left half 和 right half。
+
+相比起**Merge Sort**来我觉得快排更好理解一些，在代码实现上：
+
+ 1. 首先是先进行Partition，功能为：找到**split point**，并且把**pivot value**换到**split point**上。
+ 2. 接着是快排函数，拿到**split point**，然后快排left **half**和**right half**，循环停止的判断设为first < last，因为最后会只剩下一个值，first = last，循环也就停止了。
+
+{% highlight python %}
+
+    def partition(alist, first, last):
+        pivotvalue = alist[first]
+    
+        leftmark = first + 1
+        rightmark = last
+    
+        done = False
+        while not done:
+            while leftmark <= rightmark and alist[leftmark] <= pivotvalue:
+                leftmark += 1
+    
+            while leftmark <= rightmark and alist[rightmark] >= pivotvalue:
+                rightmark -= 1
+    
+            if leftmark < rightmark:
+                temp = alist[leftmark]
+                alist[leftmark] = alist[rightmark]
+                alist[rightmark] = temp
+            else:
+                done = True
+    
+        temp = alist[first]
+        alist[first] = alist[rightmark]
+        alist[rightmark] = temp
+    
+        return rightmark
+    
+    def quickSort(alist, first, last):
+        if first < last:
+    
+            splitpoint = partition(alist, first, last)
+    
+            quickSort(alist, first, splitpoint - 1)
+            quickSort(alist, splitpoint+1, last)
+    
+    
+    def quickSort_wrapped(alist):
+        quickSort(alist, 0, len(alist) -1)
+        return alist
+
+{% endhighlight %}
+
+####快排分析
+快排会有$$logn$$次的分裂，另外为了找到**split point**，每个值都要被遍历一次，所以时间复杂度是$$O(nlogn)$$。除此之外，也不需要merge sort中额外的储存空间（用来保存**left half**和**right half**）。
+
+但是，如果最早的情况出现，**split point**可能不在中间，而是非常倾向左边或者右边，如果是这样的话，可能会出现，一边排序$$0$$个值，另一边排序剩下$$n-1$$个值，然后接下去又是一边是$$0$$，另一边是$$n-2$$。这样的话，时间复杂度就是$$O(n^2)$$。
+
+我们可以通过一种叫做**median of three**的方法来减少这样情况的发生，也就是，不是简单取第一个数作为**pivot value**，而是取**first, middle and last**三个数中的中间值。在这个例子中是，54,77,20，我们选用中间值作为**pivot value** ，也就是54。
+
+###总结
+
+>  1. A sequential search is $$O(n)$$ for ordered and unordered lists.
+>  2. A binary search of an ordered list is $$O(logn)$$ in the worst case.
+>  3. Hash tables can provide constant time searching. $$O(1)$$
+>   * 但是Hash Table的性能也受到load factor的约束，α越小，标明填入表中的元素越少，产生冲突的可能性就越小。对于使用开放寻址法，线性探测的哈希表，successful research下的平均比较数为$$\frac{1}{2}(1+\frac{1}{1-\lambda})$$，unsuccessful research下的平均比较数为$$\frac{1}{2}(1+(\frac{1}{1-\lambda})^2)$$
+>  4. A bubble sort, a selection sort, and an insertion sort are$$O(n^2)$$ algorithms.
+>  5. A shell sort improves on the insertion sort by sorting incremental sublists. It falls between $$O(n)$$ and $$O(n2)$$.
+>  6. A merge sort is $$O(nlogn)$$, but requires additional space for the merging process.
+>  7. A quick sort is $$O(nlogn)$$, but may degrade to $$O(n^2)$$ if the split points are not near the middle of the list. It does not require additional space.
+
+
