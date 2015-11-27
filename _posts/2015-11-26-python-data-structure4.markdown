@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "python data structure(3)"
-excerpt: "Sorting"
+excerpt: "abstract data structure"
 categories: articles
 tags: [python, data structure]
 comments: true
