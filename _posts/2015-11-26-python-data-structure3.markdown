@@ -100,18 +100,18 @@ Selection的时间复杂度依旧是$$O(n^2)$$。但是由于交换次数的减�
 代码实现如下：
 {% highlight python %}
 def insertionSort(alist):
-	  for index in range(1, len(alist)):
+	for index in range(1, len(alist)):
 
-		  currentvalue = alist[index]
-		  pos = index
+		currentvalue = alist[index]
+		pos = index
 
-		  while pos > 0 and alist[pos-1] > currentvalue:
-			  alist[pos] = alist[pos - 1]
-			  pos -= 1
+		while pos > 0 and alist[pos-1] > currentvalue:
+			alist[pos] = alist[pos - 1]
+			pos -= 1
 
-		  alist[pos] = currentvalue
+		alist[pos] = currentvalue
 
-	  return alist
+	return alist
 {% endhighlight %}
 
 即使这样我们依旧需要n-1次的传递来排序，最大的比较次数依旧是n-1之和。所以它的时间复杂度还是$$O(n^2)$$
