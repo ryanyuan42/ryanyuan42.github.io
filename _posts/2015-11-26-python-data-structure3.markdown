@@ -135,6 +135,7 @@ Figure 7: A Shell Sort after Sorting Each Sublist
 看图应该很好理解，就是把原本是9个数的list，分成3个sublist，然后去sort这三个sublist，最后整合为一个list。然后再对这个list使用标准的insertion sort
 
 ![enter image description here](http://interactivepython.org/courselib/static/pythonds/_images/shellsortC.png)
+
 Figure 8: ShellSort: A Final Insertion Sort with Increment of 1
 
 下面这段代码用的一开始是$n/2$个sublist，接着是$n/4$...
