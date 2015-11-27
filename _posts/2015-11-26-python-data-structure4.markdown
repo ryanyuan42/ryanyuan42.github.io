@@ -61,7 +61,7 @@ print("pop_end ",pop_end.timeit(number=1000), "milliseconds")
 
  ('pop_zero ', 1.9101738929748535, 'milliseconds')
  ('pop_end ', 0.00023603439331054688, 'milliseconds')
- {% endhighlight %}
+{% endhighlight %}
 
 可以看出来pop(0)显著慢于pop( )，这是因为pop(0)的效率是$$O(n)$$，而pop( )的效率是$$O(1)$$
 
