@@ -167,11 +167,13 @@ def gapInsertionSort(alist,start,gap):
 {% endhighlight %}   
 
 值得一提的是这样做会使得时间复杂度落在$$O(n)$$和$$O(n^2)$$之间
+
 ###Merge Sort
 ![enter image description here](http://interactivepython.org/courselib/static/pythonds/_images/mergesortA.png)
-Figure 10: Splitting the List in a Merge Sort
+*Figure 10: Splitting the List in a Merge Sort*
+
 ![enter image description here](http://interactivepython.org/courselib/static/pythonds/_images/mergesortB.png)
-Figure 11: Lists as They Are Merged Together
+*Figure 11: Lists as They Are Merged Together*
 
 很明显的分治策略，但是自己用代码实现只能想到spilit，不知道该如何merge起来，或者说自己用来merge的方法太丑陋了。下面的算法真是精彩，通过直接的recursive，并且在后面加判断代码。
 
