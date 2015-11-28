@@ -436,23 +436,3 @@ class UnorderedList:
 
 所以我们应该这样设计add函数
 
-{% highlight python %}
-def add(self,item):
-    temp = Node(item)
-    temp.setNext(self.head)
-    self.head = temp
-{% endhighlight %}
-
-![enter image description here](http://interactivepython.org/courselib/static/pythonds/_images/addtohead.png)
-
-*Figure 7: Adding a New Node is a Two-Step Process*
-
-加入一个新的Node是一个两部的过程，首先要把新的Node连接到之前的链表中的第一个数，并且让head指向这个新的Node。
-
-
-之后还有size, search, remove三个操作，都很好理解，我就直接贴代码了。
-
-size就是利用getNext()遍历所有的元素，然后统计总和。
-search也是利用getNext()遍历所有的元素，找到了就返回True
-remove，就是利用search的原理找到要删除的数，然后把前面一个数，和下一个数连接起来。
-
