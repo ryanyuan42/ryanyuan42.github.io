@@ -433,6 +433,7 @@ class UnorderedList:
 由于31是第一个加入进来的item，所以31应该在整个链表的尾部，而54是最后一个加进来的item，所以54应该在整个链表的首部，连接着Head。
 
 所以我们应该这样设计add函数
+
 {% highlight python %}
 def add(self,item):
     temp = Node(item)
@@ -535,7 +536,6 @@ class UnorderedList:
 				self.head = current.getNext()
 			else:
 				previous.setNext(current.getNext)
-
 {% endhighlight %}
 
 还剩下二叉树结构没看，二叉树模型乍一看很好理解，但是其中的操作，如delete, search,add的实现肯定是比较难的。
