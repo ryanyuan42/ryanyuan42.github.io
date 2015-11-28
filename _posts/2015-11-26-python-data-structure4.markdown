@@ -365,6 +365,7 @@ def baseConverter(decNumber,base):
 ####The Node Class
 
 我们先创建一个Node，包含了自己，还包含了通向下个数的道路。
+
 {% highlight python %}
 class Node:
     def __init__(self,initdata):
