@@ -363,3 +363,12 @@ class UnorderedList:
 				previous.setNext(current.getNext)
 {% endhighlight %}
 
+剩下的就是二叉树了，二叉树乍一看很好了解，但是它的各项操作还是要多点时间去理解的。
+
+但是今天真的不想看了，晚上休息一下，周末可能再抽空看吧。用五章结束python的数据结构应该还算充实了。
+
+过后就是去进入数据挖掘了，先马克一下书籍
+
+> building machine learning systems with python
+
+之后要考虑一下要不要学一下Scrapy，可能寒假有空再说吧
