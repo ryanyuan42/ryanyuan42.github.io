@@ -402,6 +402,7 @@ class UnorderedList:
 {% endhighlight %}
 
 我们可以先构造一个unordered list的实例，mylist
+
 ```
 >>> mylist = UnorderedList()
 ```
@@ -421,6 +422,7 @@ class UnorderedList:
 *Figure 6: A Linked List of Integers*
 
 先考虑以下的情况
+
 ```
 >>> mylist.add(31)
 >>> mylist.add(77)
