@@ -353,4 +353,339 @@ def buildHeap(self,alist):
 
 
 
+###Binary Search Tree
+
+就像名字一样，我们希望用二叉树来提供搜索功能。
+
+一个二叉搜索树应该有以下的功能：
+
+    Map() Create a new, empty map.
+    
+    put(key,val) 
+    Add a new key-value pair to the map. If the key is already in the map then replace the old value with the new value.
+    
+    get(key) Given a key, return the value stored in the map or None otherwise.
+    
+    del Delete the key-value pair from the map using a statement of the form del map[key].
+    
+    len() Return the number of key-value pairs stored in the map.
+    
+    in 
+    Return True for a statement of the form key in map, if the given key is in the map.
+
+二叉搜索树有一个重要的特性，就是比parent小的值都在左边的subtree里，而比parent大的值，都在右边的subtree里。
+
+如图所示：
+
+![enter image description here](http://interactivepython.org/courselib/static/pythonds/_images/simpleBST.png)
+
+*Figure 1: A Simple Binary Search Tree*
+
+我们把这个性质叫做`bst property`
+
+原List是[70,31,93,94,14,23,73]，70作为root，31比70小，所以31在左边；93比70大，所以93在右边；接下去94因为比70和93都大，所以在93的右边，而73比70大，所以在70的右边，比93小，所以在93的左边...
+
+为了实现二叉搜索书，我们还是使用Nodes + reference的方式来表示。
+
+代码实现如下
+{% highlight python %}
+class BinarySearchTree:
+
+    def __init__(self):
+        self.root = None
+        self.size = 0
+
+    def length(self):
+        return self.size
+
+    def __len__(self):
+        return self.size
+
+    def __iter__(self):
+        return self.root.__iter__()
+class TreeNode:
+   def __init__(self,key,val,left=None,right=None,
+                                       parent=None):
+        self.key = key
+        self.payload = val
+        self.leftChild = left
+        self.rightChild = right
+        self.parent = parent
+
+    def hasLeftChild(self):
+        return self.leftChild
+
+    def hasRightChild(self):
+        return self.rightChild
+
+    def isLeftChild(self):
+        return self.parent and self.parent.leftChild == self
+
+    def isRightChild(self):
+        return self.parent and self.parent.rightChild == self
+
+    def isRoot(self):
+        return not self.parent
+
+    def isLeaf(self):
+        return not (self.rightChild or self.leftChild)
+
+    def hasAnyChildren(self):
+        return self.rightChild or self.leftChild
+
+    def hasBothChildren(self):
+        return self.rightChild and self.leftChild
+
+    def replaceNodeData(self,key,value,lc,rc):
+        self.key = key
+        self.payload = value
+        self.leftChild = lc
+        self.rightChild = rc
+        if self.hasLeftChild():
+            self.leftChild.parent = self
+        if self.hasRightChild():
+            self.rightChild.parent = self
+{% endhighlight %}  
+
+
+我们要给二叉搜索树提供一个添加node的功能，当然这个功能是加在`BinarySearchTree`这个类里面的。
+
+{% highlight python %}
+def put(self,key,val):
+    if self.root:
+        self._put(key,val,self.root)
+    else:
+        self.root = TreeNode(key,val)
+    self.size = self.size + 1
+
+def _put(self,key,val,currentNode):
+    if key < currentNode.key:
+        if currentNode.hasLeftChild():
+               self._put(key,val,currentNode.leftChild)
+        else:
+               currentNode.leftChild = TreeNode(key,val,parent=currentNode)
+    else:
+        if currentNode.hasRightChild():
+               self._put(key,val,currentNode.rightChild)
+        else:
+               currentNode.rightChild = TreeNode(key,val,parent=currentNode)
+{% endhighlight %} 
+
+算法原理很简单，查看当前的二叉树有没有root，没有就把新加来的变成root；有root的话就用helper function执行算法，算法原理就是如果Key比当前的小，摆左边，如果左边被占用了，那就对左边的Node再执行算法；如果key比当前的大，摆右边，如果右边被占用了，就对右边的Node再执行算法。
+
+{% highlight python %}
+def put(self,key,val):
+    if self.root:
+        self._put(key,val,self.root)
+    else:
+        self.root = TreeNode(key,val)
+    self.size = self.size + 1
+
+def _put(self,key,val,currentNode):
+    if key < currentNode.key:
+        if currentNode.hasLeftChild():
+               self._put(key,val,currentNode.leftChild)
+        else:
+               currentNode.leftChild = TreeNode(key,val,parent=currentNode)
+    else:
+        if currentNode.hasRightChild():
+               self._put(key,val,currentNode.rightChild)
+        else:
+               currentNode.rightChild = TreeNode(key,val,parent=currentNode)
+{% endhighlight %}
+
+同理我们需要一个`get`的功能，如果当前二叉树有root，那就调用helper function，如果当前二叉树没有root，那就返回`None`。Helper function中的算法就是利用二叉搜索树的特性，如果key比当前Node小，就去当前Node的左边再找，如果key比当前Node大，就去当前Node的右边再找。如果最后找不到，当前Node成了`None`，返回`None`
+
+{% highlight python %}
+def get(self,key):
+    if self.root:
+        res = self._get(key,self.root)
+        if res:
+               return res.payload
+        else:
+               return None
+    else:
+        return None
+
+def _get(self,key,currentNode):
+    if not currentNode:
+        return None
+    elif currentNode.key == key:
+        return currentNode
+    elif key < currentNode.key:
+        return self._get(key,currentNode.leftChild)
+    else:
+        return self._get(key,currentNode.rightChild)
+
+def __getitem__(self,key):
+    return self.get(key)
+{% endhighlight %}
+ 
+然后是设计`in`的功能。
+
+{% highlight python %}
+def __contains__(self,key):
+    if self._get(key,self.root):
+        return True
+    else:
+        return False
+{% endhighlight %}
+
+
+最后我们要设计`delete`的方法，我们可以先设计一个这样的方法。
+
+{% highlight python %}
+def delete(self,key):
+   if self.size > 1:
+      nodeToRemove = self._get(key,self.root)
+      if nodeToRemove:
+          self.remove(nodeToRemove)
+          self.size = self.size-1
+      else:
+          raise KeyError('Error, key not in tree')
+   elif self.size == 1 and self.root.key == key:
+      self.root = None
+      self.size = self.size - 1
+   else:
+      raise KeyError('Error, key not in tree')
+
+def __delitem__(self,key):
+    self.delete(key)
+{% endhighlight %}
+
+接着我们会找到我们想要删除的Node，我们应该考虑下面三种情况：
+
+ 1. 这个Node没有Children
+ 2. 这个Node只有一个Child
+ 3. 这个Node有两个Children
+
+如果没有children应该是这样：
+
+![enter image description here](http://interactivepython.org/courselib/static/pythonds/_images/bstdel1.png)
+
+
+{% highlight python %}
+if currentNode.isLeaf():
+    if currentNode == currentNode.parent.leftChild:
+        currentNode.parent.leftChild = None
+    else:
+        currentNode.parent.rightChild = None
+{% endhighlight %}
+
+注意，这里删除的是Reference。
+
+如果有一个Child的话，
+
+![enter image description here](http://interactivepython.org/courselib/static/pythonds/_images/bstdel2.png)
+
+我们要考虑的就是这个Node有的一个Child是LeftChild还是RightChild，如果是leftChild，我们又要问这个Node是Left还是Right，如果是Left，就把LeftChild和自己的parent对接...
+
+
+{% highlight python %}
+else: # this node has one child
+   if currentNode.hasLeftChild():
+      if currentNode.isLeftChild():
+          currentNode.leftChild.parent = currentNode.parent
+          currentNode.parent.leftChild = currentNode.leftChild
+      elif currentNode.isRightChild():
+          currentNode.leftChild.parent = currentNode.parent
+          currentNode.parent.rightChild = currentNode.leftChild
+      else:
+          currentNode.replaceNodeData(currentNode.leftChild.key,
+                             currentNode.leftChild.payload,
+                             currentNode.leftChild.leftChild,
+                             currentNode.leftChild.rightChild)
+   else:
+      if currentNode.isLeftChild():
+          currentNode.rightChild.parent = currentNode.parent
+          currentNode.parent.leftChild = currentNode.rightChild
+      elif currentNode.isRightChild():
+          currentNode.rightChild.parent = currentNode.parent
+          currentNode.parent.rightChild = currentNode.rightChild
+      else:
+          currentNode.replaceNodeData(currentNode.rightChild.key,
+                             currentNode.rightChild.payload,
+                             currentNode.rightChild.leftChild,
+                             currentNode.rightChild.rightChild)
+{% endhighlight %}
+
+如果是有两个Children，
+
+![enter image description here](http://interactivepython.org/courselib/static/pythonds/_images/bstdel3.png)
+
+*Figure 5: Deleting Node 5, a Node with Two Children*
+
+如果删掉一个这样的节点，我们需要找到一个`successor`来替代它才行，这个`successor`被确保是只有一个Child。我们需要`findSuccessor` 和 `findMin`这两个Helper function，另外我们用`spliceOut`来去掉`successor`
+
+{% highlight python %}
+elif currentNode.hasBothChildren(): #interior
+        succ = currentNode.findSuccessor()
+        succ.spliceOut()
+        currentNode.key = succ.key
+        currentNode.payload = succ.payload
+{% endhighlight %}
+
+为了找到successor我们需要这样做：
+
+ 1. 如果Node有一个rightChild，那successor就是右边的subtree中的最小值。
+2. 如果Node没有rightChild，并且它的parent的leftChild，那succ就是parent
+3. 如果Node没有rightChild，并且它的parent的rightChild，那succ就是parent的succ（除了Node）
+
+当然在我们的例子中，为了处理拥有两个Child的Node情况，只有第一种情况是符合的。但是剩下两种考虑在以后还会有用。 
+
+以下的代码都是加在TreeNode的类里面。
+{% highlight python %}
+def findSuccessor(self):
+    succ = None
+    if self.hasRightChild():
+        succ = self.rightChild.findMin()
+    else:
+        if self.parent:
+               if self.isLeftChild():
+                   succ = self.parent
+               else:
+                   self.parent.rightChild = None
+                   succ = self.parent.findSuccessor()
+                   self.parent.rightChild = self
+    return succ
+
+def findMin(self):
+    current = self
+    while current.hasLeftChild():
+        current = current.leftChild
+    return current
+
+def spliceOut(self):
+    if self.isLeaf():
+        if self.isLeftChild():
+               self.parent.leftChild = None
+        else:
+               self.parent.rightChild = None
+    elif self.hasAnyChildren():
+        if self.hasLeftChild():
+               if self.isLeftChild():
+                  self.parent.leftChild = self.leftChild
+               else:
+                  self.parent.rightChild = self.leftChild
+               self.leftChild.parent = self.parent
+        else:
+               if self.isLeftChild():
+                  self.parent.leftChild = self.rightChild
+               else:
+                  self.parent.rightChild = self.rightChild
+               self.rightChild.parent = self.parent
+{% endhighlight %}
+
+对二叉分析树的分析，如果是balanced Tree，`put`函数的表现是$$O(logn)$$，但是很不幸有可能出现这种unbalanced 的情况。
+
+![enter image description here](http://interactivepython.org/courselib/static/pythonds/_images/skewedTree.png)
+
+*Figure 6: A skewed binary search tree would give poor performance*
+
+这样`put`函数的表现就是$$O(n)$$
+
+这样让我们很不爽！搞了这么半天，效率还是有可能被降到$$O(n)$$，这样不就和原来的链表一样了吗？链表的很多操作都涉及到Search的算法，而且算法也是最基本的sequential search。因此，我们引入**AVL树**的概念。
+
+Python Data Structure快要结束了，下次更完AVL树，Graph algo有机会再看，一个愉快的感恩节。
+
 
