@@ -164,6 +164,7 @@ $$newBal(D)=oldBal(D)-1+min(newBal(B),0)$$
 ![enter image description here](http://interactivepython.org/courselib/static/pythonds/_images/hardunbalanced.png)
 
 *Figure 6: An Unbalanced Tree that is More Difficult to Balance*
+
 ![enter image description here](http://interactivepython.org/courselib/static/pythonds/_images/badrotate.png)
 
 *Figure 7: After a Left Rotation the Tree is Out of Balance in the Other Direction*
