@@ -9,6 +9,9 @@ image:
 comments: true
 share: true
 ---
+本系列来自于学习[Problem Solving with Algorithms and Data Structures
+](http://interactivepython.org/courselib/static/pythonds/index.html)记录下的笔记和过程，感谢原教程制作者的无私奉献。
+
 Thanksgiving只能呆家里，开个Python Data Structure的坑
 
 废话少说，现在就开始。
