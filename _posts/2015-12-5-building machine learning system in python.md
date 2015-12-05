@@ -683,7 +683,7 @@ plt.legend(["d=%i"% f1.order], loc = "upper left")
 
 
 
-![png](http://screenshot.net/53kg0fx?tw)
+![png](http://screenshot.net/qvj1yun.jpg)
 
 
 
