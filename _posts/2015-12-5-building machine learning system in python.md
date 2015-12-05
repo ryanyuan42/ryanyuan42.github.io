@@ -612,7 +612,7 @@ error(f1, x, y)
 
 
 
-```python
+{% highlight python %}
 fx = sp.linspace(0, x[-1], 1000) 
 plt.scatter(x,y)
 plt.title("Web traffic over the last month")
@@ -623,7 +623,7 @@ plt.autoscale(tight=True)
 plt.grid()
 plt.plot(fx, f1(fx), 'b',linewidth = 2)
 plt.legend(["d=%i"% f1.order], loc = "upper left")
-```
+{% endhighlight %}
 
 
 
@@ -640,21 +640,20 @@ plt.legend(["d=%i"% f1.order], loc = "upper left")
 ---
 
 
-```python
+{% highlight python %}
 f2p = sp.polyfit(x, y, 2)
-
 print f2p
-```
+{% endhighlight %}
 
     [  1.05322215e-02  -5.26545650e+00   1.97476082e+03]
     
 
 
-```python
+{% highlight python %}
 f2 = sp.poly1d(f2p)
 
 print error(f2, x, y)
-```
+{% endhighlight %}
 
     179983507.878
     
@@ -689,15 +688,15 @@ plt.legend(["d=%i"% f1.order], loc = "upper left")
 
 
 
-```python
+{% highlight python %}
 f3p = sp.polyfit(x,y,3)
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 f3 = sp.poly1d(f3p)
 print error(f3, x, y)
-```
+{% endhighlight %}
 
     139350144.032
     
