@@ -642,6 +642,7 @@ plt.legend(["d=%i"% f1.order], loc = "upper left")
 
 ```python
 f2p = sp.polyfit(x, y, 2)
+
 print f2p
 ```
 
@@ -651,6 +652,7 @@ print f2p
 
 ```python
 f2 = sp.poly1d(f2p)
+
 print error(f2, x, y)
 ```
 
@@ -660,7 +662,7 @@ print error(f2, x, y)
 我们的这里函数是 f(x) = 0.0105322215 \* x \*\* 2 - 5.26545650 * x + 1974.76082
 
 
-```python
+{% highlight python %}
 fx = sp.linspace(0, x[-1], 1000) 
 plt.figure(figsize=[8,6])
 plt.scatter(x,y,s=8,alpha=0.6)
@@ -673,7 +675,7 @@ plt.grid()
 plt.plot(fx, f1(fx), 'b',linewidth = 2)
 plt.plot(fx, f2(fx), 'g', linewidth = 2)
 plt.legend(["d=%i"% f1.order], loc = "upper left")
-```
+{% endhighlight %}
 
 
 
@@ -701,17 +703,15 @@ print error(f3, x, y)
     
 
 
-```python
+{% highlight python %}
 f100p = sp.polyfit(x,y,100)
 f100 = sp.poly1d(f100p)
-```
-
-    C:\Python27\lib\site-packages\numpy\lib\polynomial.py:588: RankWarning: Polyfit may be poorly conditioned
-      warnings.warn(msg, RankWarning)
-    
+{% endhighlight %}
 
 
-```python
+
+
+{% highlight python %}
 fx = sp.linspace(0, x[-1], 1000) 
 plt.figure(figsize=[8,6])
 plt.scatter(x,y,s=8,alpha=0.6)
@@ -727,8 +727,7 @@ plt.plot(fx, f3(fx), color = '#94a0b6', linewidth = 2, linestyle = '--')
 plt.plot(fx, f100(fx), color = 'r', linewidth = 2)
 plt.legend(["d=%i"% f1.order], loc = "upper left")
 plt.legend(["d=%i"% f2.order], loc ="upper left")
-
-```
+{% endhighlight %}
 
 
 
