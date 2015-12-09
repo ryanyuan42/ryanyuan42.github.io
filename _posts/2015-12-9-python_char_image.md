@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Final month Planning"
-excerpt: "framework for this month"
+title: "Python字符画"
+excerpt: "Final week's coming, wtf am I doing?!"
 categories: articles
 tags: [生活]
 comments: true
