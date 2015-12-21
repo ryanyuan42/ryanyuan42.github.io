@@ -190,7 +190,7 @@ Testing error was 90.0% (N=50)
 
 如下图:
 
-            ![enter image description here](http://screenshot.net/8jq9cjp.jpg)
+![enter image description here](http://screenshot.net/8jq9cjp.jpg)
 
 但是这样做就要注意，要让每个fold里面的数据较为平衡，不能所有的数据都来自一种花类，那样得出的结果就不够可靠了。
 
