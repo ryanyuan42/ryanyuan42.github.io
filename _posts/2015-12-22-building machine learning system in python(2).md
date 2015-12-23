@@ -12,6 +12,7 @@ share: true
 之前我们使用的是一个非常简单的模型，一个在单独维度上的简单的threshold，我们可以看到很多其它的模型。
 
 那么什么组成一个classification model呢？我们可以把它分为以下三个部分:
+
  * **the structure of the model**：在之前的例子中，我们使用的是，单独特征的一个threshold
  * **the search procedure**：在之前的例子中，我们用了每种特征和threshold的组合
  * **The loss function**：使用loss function，我们要决定那种可能错误更少一点，我们可以用training error，通常我们希望loss function能够实现最小化
@@ -29,6 +30,7 @@ You want to minimize the false negatives as much as you can 因为这样更加�
 ### Seeds Dataset
 
 接下来看一个有关农业的数据，它仍旧很小，但是已经大到难以让我们像对待Iris Flower那样简单的plot这些数据了。这是一个用来衡量小麦种子的数据集。一共有七个特征：
+
  * Area(A)
  * Perimeter (P)
  * Compactness (C = 4piA/P^2)
