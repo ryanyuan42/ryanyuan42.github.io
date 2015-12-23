@@ -219,6 +219,7 @@ for ei in range(n):
 correct = correct / n
 print '{:.1%}'.format(correct[0])
 {% endhighlight %}
+``` 90.5% ```
 
 ### sklearn下的normalization
 {% highlight python %}
