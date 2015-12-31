@@ -5,7 +5,9 @@ excerpt: "感恩节的思考"
 categories: articles
 tags: [生活]
 image:
-  feature: so-simple-sample-image-2.jpg
+  feature: Jon Ottosson.jpg
+  credit: Jon Ottosson
+  creditlink: https://unsplash.com/photos/YD1uvthZwg4
 comments: true
 share: true
 ---
