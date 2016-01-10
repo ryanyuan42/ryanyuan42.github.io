@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Barra Risk Model Implementation"
-excerpt: "A little implementation of python GUI"
+excerpt: "First implementation of finance stats analysis"
 categories: articles
-tags: [python, GUI]
+tags: [python, barra]
 comments: true
 share: true
 ---
