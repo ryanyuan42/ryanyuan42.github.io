@@ -9,8 +9,7 @@ share: true
 ---
 Some Simple Time Series Models
 -------
-最完整的Time Series Model应该是随机向量序列{$$X_{1}+X_{2}+...$$}的联合分布。也就是
-$$P(X_{1}\leq x_{1}...X_{n}\leq x_{n}), -\infty <x_{1},x_{2}...x_{n}<\infty, n=1,2...$$
+最完整的Time Series Model应该是随机向量序列{$$X_{1}+X_{2}+...$$}的联合分布。也就是$$P(X_{1}\leq x_{1}...X_{n}\leq x_{n}), -\infty <x_{1},x_{2}...x_{n}<\infty, n=1,2...$$
  
  但是这样太过于复杂，所以相反的我们使用这个联合分布函数的first- and second-order moments，即$$EX_{t}$$与$$E(X_{t+h}X_{t}), t=1,2..., h =0,1,2...$$
 ,$${X_{t}}$$的性质完全决定于它们。这样的$${X_{t}}$$被称作是Second-order properties。
