@@ -38,11 +38,17 @@ To spice up the game, we will play with some special rules:
 To get started, download all of the project code as a [zip file](https://github.com/ryanyuan42/python_code/blob/master/cs61a/hog.zip). You only have to make changes to hog.py.
 
 ```hog.py```: A starter implementation of Hog
+
 ```dice.py```: Functions for rolling dice
+
 ```hog_gui.py```: A graphical user interface for Hog
+
 ```ucb.py```: Utility functions for CS 61A
+
 ```ok```: CS 61A autograder
+
 ```tests```: A directory of tests used by ok
+
 ```images```: A directory of images used by hog_gui.py
 
  
