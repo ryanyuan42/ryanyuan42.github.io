@@ -53,7 +53,8 @@ for n in l:
 所以这个函数应该创建一个新的list, 并在遇到第一个要删除的时候跳过它，然后在之后的遍历过程不用跳过它。我们可以用一个开关来控制我们的循环过程。
 
 完整代码如下：
-```
+
+```python
 def remove_elem(lst, x):
 	new_lst = []
 	ONCE = False
@@ -88,8 +89,10 @@ def create_times_dict(lst):
 想象一个[1,1,1,1,1]的list，第一次remove需要1个Operation，第二次还是1个Opertaion...一共是n，然后还要乘上recursion的遍历，所以这整个算法应该是O(n^2)？ I'm not so sure...
 
 结果如下
+
 ```
 the time of iterating 1e6 times using old version count times function is 3.399412
+
 the time of iterating 1e6 times using new recursion count times function is 21.370472
 ```
 
@@ -97,6 +100,6 @@ the time of iterating 1e6 times using new recursion count times function is 21.3
 
 ![enter image description here](http://screenshot.net/owowdsw.jpg)
 
-cs61a 交给我的recursively thinking这么辣鸡么... recursive version比old version慢了一个数量级...
+cs61a 教给我的recursively thinking这么辣鸡么... recursive version比old version慢了一个数量级...
 
 Anyway, 应该去复习时序了！
