@@ -54,7 +54,7 @@ for n in l:
 
 完整代码如下：
 
-```python
+{% highlight python %}
 def remove_elem(lst, x):
 	new_lst = []
 	ONCE = False
@@ -80,7 +80,7 @@ def count_times_recursion(lst, x):
 
 def create_times_dict(lst):
 	return {key: count_times_recursion(lst, key) for key in lst}
-```
+{% endhighlight %}
 
 那么感兴趣的还是这个算法的效率如何？我们来比较一下好了。按道理...recursion应该比iteration更慢吧...
 
@@ -90,11 +90,11 @@ def create_times_dict(lst):
 
 结果如下
 
-```
+{% highlight python%}
 the time of iterating 1e6 times using old version count times function is 3.399412
 
 the time of iterating 1e6 times using new recursion count times function is 21.370472
-```
+{% endhighlight %}
 
 但是结果告诉我并不是O(n^2)而是O(n)...下面是recursive_version调用不同次数花费时间的plot
 
