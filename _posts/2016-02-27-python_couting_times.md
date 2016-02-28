@@ -103,3 +103,20 @@ the time of iterating 1e6 times using new recursion count times function is 21.3
 cs61a 教给我的recursively thinking这么辣鸡么... recursive version比old version慢了一个数量级...
 
 Anyway, 应该去复习时序了！
+
+
+----
+28, Feb update
+
+更新一下，recursion比iteration慢的原因是因为每次都要新开一个frame, the overheads of function calls.
+
+而且时间复杂度也应该用不同长度的list来看，而不是重复的次数...=.=
+
+用不同长度list产生出来的时间plot
+
+![enter image description here](http://screenshot.net/nkyk5fp.jpg)
+
+比较清晰的O(N^2)
+
+
+
