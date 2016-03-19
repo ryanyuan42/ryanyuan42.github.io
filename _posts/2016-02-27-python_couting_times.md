@@ -12,7 +12,7 @@ share: true
 
 现在的我，遇到了这个问题，我想应该会用Recursion来写这个算法，就是当时记不起来的想法。
 
-```python
+{% highlight python %}
 def count_times_recursion(lst, x):
 	"""
 	This function take in a list(lst) and count how many times x shows up in this lst.
@@ -22,16 +22,16 @@ def count_times_recursion(lst, x):
 	else:
 		lst.remove(x)
 		return 1 + count_times_recursion(lst, x)
-```
+{% endhighlight %}
 
 非常简单的一个使用recursion的算法。但是这样和当时的问题要求感觉好像不太一样了。当时的问题要求我得到一个dict，其中应该显示elem和elem显示的次数。
 
 那么我会这样来写。
 
-```python
+{% highlight python %}
 def create_times_dict(lst):
 	return {key: count_times_recursion(k) for key in lst}
-```
+{% endhighlight %}
 
 Pretty clean! 
 
@@ -39,12 +39,12 @@ BUT THERE WAS A PROBLEM!
 
 我突然意识到这样写会出现一个奇怪的结果，首先我在```count_times_recursion```中使用了```lst.remove(x)```,这是一件不是很好的事情，这代表着我在mutate my list。所以之后在建造dict的过程中可能会出现上次关于这个算法博客中的我提到的一个现象，也就是
 
-```
+{% highlight python %}
 l = [1,2,3,4]
 for n in l:
     l.remove(n)
     print l
-```
+{% endhighlight %}
 
 也就是说1会跳到3，而不经过2，具体原因是因为for creates an iterator that is not consistent with the list. 可以认为，for创造了[1,2,3,4]，然后用这些indices去取出list中的数，所以当list remove了1，成为了[2,3,4]之后, indices并没有改变，因此取出了3.
 
@@ -118,5 +118,37 @@ Anyway, 应该去复习时序了！
 
 比较清晰的O(N^2)
 
+---
+19, March update
 
+Finally, cs61a gives me the answer. I should use set to do this, which is the idea of hashing to count. I thought about this but I didn't realize I can do it this way.
+
+Anyway, finally I found a way to create a dictionary, which is even better using the build-in function [].count(). A little more faster.
+
+Here we go,
+
+{% highlight python%}
+def count_times_w_set(lst):
+	unique = {n for n in lst}
+	dic = {elem : 0 for elem in unique} 
+
+	for elem in lst:
+		if elem in dic:
+			dic[elem] += 1
+	return dic
+{% endhighlight %}
+
+{% highlight python%}
+def count_times_inside_dic(lst):
+	return {k : lst.count(k) for k in lst}
+{% endhighlight %}
+
+I tested it many times using timeit in Python. Using set is always a little bit faster than using lst.count()
+
+{% highlight python%}
+the time of iterating 1e6 times using count_times_w_set is 2.416925
+the time of iterating 1e6 times using count_times_inside_dic is 2.100947
+{% endhighlight %}
+
+The Order of Growth of count_times_w_set is $$O(n)$$.
 
