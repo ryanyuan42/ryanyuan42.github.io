@@ -9,10 +9,18 @@ image:
   creditlink: https://unsplash.com/photos/ZMcLVBi9xx4
 ---
 
+
 ## Student
-I am Tianshu Yuan.
+I am Tianshu Yuan.  
+3 Years being undergraduate in Shanghai University of Finance and Economics.  
+1 Year being an exchange student in University of California, Berkeley.  
+1.5 Year being a graudate student in North Carolina State University.  
+
 
 ### Build this to：
 * Be quant
 * Record life
 * Kill time
+* Look for a job.
+
+You can find my resume here: [resume](https://www.google.com)
