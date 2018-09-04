@@ -1,13 +1,13 @@
 # Site navigation links
 
-- title: 关于
+- title: About
   url: /about/
 
-- title: 博客
+- title: Articles
   url: /articles/
   
-- title: 标签
+- title: Tags
   url: /tags/
   
-- title: 搜索
+- title: Search
   url: /search/
