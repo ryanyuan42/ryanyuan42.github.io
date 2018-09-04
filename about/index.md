@@ -23,4 +23,4 @@ I am Tianshu Yuan.
 * Kill time
 * Look for a job.
 
-You can find my resume here: [resume](https://www.google.com)
+You can find my resume here: [resume](https://github.com/ryanyuan42/ryanyuan42.github.io/blob/master/assets/Resume-Tianshu%20Yuan.pdf)
