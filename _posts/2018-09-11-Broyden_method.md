@@ -55,7 +55,7 @@ Apply sherman-morrison on the it, we can get the update rule for inverse matrix 
 
 "Bad" Broyden's idea is similar, given an slightly different secant condition, 
 
-$$B_{k+1}g = d$$, where $$B$$ is an approximation to the inverse of Jacobian, then by the same logic as good broyden, write update rule as $$B_{k+1} = B_k + pq^T$$, and minimize $$||pq^T||_F $$  
+$$B_{k+1}g = d$$, where $$B$$ is an approximation to the inverse of Jacobian, then by the same logic as good broyden, write update rule as $$B_{k+1} = B_k + pq^T$$, and $$ argmin ||pq^T||_{F} $$
 
 we would have $$q = \alpha g$$, which results in the final updating rule:  
 $$B_{k+1} = \frac{\delta x_{k+1} - B_k \delta f(x_{k+1})}{||\delta f(x_{k+1})||^2} \delta f(x_{k+1})^T$$
