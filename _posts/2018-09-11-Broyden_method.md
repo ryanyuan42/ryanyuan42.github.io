@@ -60,4 +60,4 @@ $$B_{k+1}g = d$$, where $$B$$ is an approximation to the inverse of Jacobian, th
 $$|p q^T|_F$$
 
 we would have $$q = \alpha g$$, which results in the final updating rule:  
-$$B_{k+1} = \frac{\Delta x_{k+1} - B_k \Delta f(x_{k+1})}{||\Delta f(x_{k+1})||^2} \Delta f(x_{k+1})^T$$
+$$B_{k+1} = B_k + \frac{\Delta x_{k+1} - B_k \Delta f(x_{k+1})}{||\Delta f(x_{k+1})||^2} \Delta f(x_{k+1})^T$$
