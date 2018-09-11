@@ -48,7 +48,7 @@ $$2 (\frac{\sum h_i^2}{(\sum_k v_k d_k})^2) (v_j - \frac{\sum_k v_k^2 d_j}{\sum_
 
 The equations satisfies when $$v = \alpha d$$, we can just let $$\alpha = 1$$, therefore, we can get the updating rules as follows:  
 
-$$J_{k+1} = J_k + \frac{\delta f_{k+1} - J_k \delta x_{k+1}}{||\delta x_{k+1}||^2} \delta x_{k+1} ^ T$$  
+$$J_{k+1} = J_k + \frac{\Delta f_{k+1} - J_k \Delta x_{k+1}}{||\Delta x_{k+1}||^2} \Delta x_{k+1} ^ T$$  
 Apply sherman-morrison on the it, we can get the update rule for inverse matrix of the Jacobian.
 
 ## "Bad" Broyden
@@ -60,4 +60,4 @@ $$B_{k+1}g = d$$, where $$B$$ is an approximation to the inverse of Jacobian, th
 $$|p q^T|_F$$
 
 we would have $$q = \alpha g$$, which results in the final updating rule:  
-$$B_{k+1} = \frac{\delta x_{k+1} - B_k \delta f(x_{k+1})}{||\delta f(x_{k+1})||^2} \delta f(x_{k+1})^T$$
+$$B_{k+1} = \frac{\Delta x_{k+1} - B_k \Delta f(x_{k+1})}{||\Delta f(x_{k+1})||^2} \Delta f(x_{k+1})^T$$
