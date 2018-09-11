@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Broyden's Method"
+title: "Broyden's Method Derivation"
 excerpt: "Numerical methods"
 categories: articles
 tags: [numerical methods]
