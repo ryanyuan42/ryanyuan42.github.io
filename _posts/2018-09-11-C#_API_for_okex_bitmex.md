@@ -33,4 +33,4 @@ as I want. GUI is a whole new area I've never been using with, so it's still a t
 
 Recently I've finally finisehd my trading GUI for Bitmex. Basically, GUI handles GET request using websocket and handles POST request using RESTFUL. It's a very good project for me to start getting deeper into C#, especially the multi-threading in C#.  
 
-![GUI recording2](https://github.com/ryanyuan42/ryanyuan42.github.io/blob/master/images/Capture2.PNG)
+![GUI recording2](https://raw.githubusercontent.com/ryanyuan42/ryanyuan42.github.io/master/images/Capture2.PNG)
