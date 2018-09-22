@@ -10,5 +10,5 @@ share: true
 
 # Optimization
 
-Suppose we have a function $f: {\rm I\!R^n} \longrightarrow {\rm I\!R}$
+Suppose we have a function $$f: {\rm I\!R^n} \longrightarrow {\rm I\!R}$$
 
