@@ -86,10 +86,12 @@ $$I=UU^T=\begin{bmatrix}u & u_\bot\end{bmatrix}\begin{bmatrix}u^T \\ u_\bot^T\en
 
 Now, remember that we have the property $$W s_k = y_k$$, we expand the formula and get the BFGS update  
 $$H_{k+1} = (I-\rho_k s_k y^\top_k)H_k (I-\rho_k y_k s^\top_k)+ \rho_k s_k s^\top_k \text{where}  \rho_k = (y^\top_k s_k)^{-1} $$
+
 # Interpretation
 
 From here, we can see that after the unitary transformation of the orthgonal matrix, we can easily solve the optimization problem. What else to notice is that, $$\hat{y_k}$$ is the eigenvector of $$\hat{H}$$, and the unitary transformation is basically representing the matrix in the eigenvector space.
 
+And look at the update rule: $$H_{k+1} = (I-\rho_k s_k y^\top_k)H_k (I-\rho_k y_k s^\top_k)+ \rho_k s_k s^\top_k \text{where}  \rho_k = (y^\top_k s_k)^{-1} $$, we can know that as long as $$\rho_k \geq 0$$, and $$H_k$$ is psd, we can ensure that the approximated Hessian matrix is positive definite, $$\rho_k \geq 0$$ can be satisified if we have a convex function. Then as long as the first estimate of Hessian matrix is positive definite, we can make sure that we are always going in the right direction.
 
 # Reference:
 https://math.stackexchange.com/questions/2271887/how-to-solve-the-matrix-minimization-for-bfgs-update-in-quasi-newton-optimizatio
