@@ -43,7 +43,15 @@ where the weight matrix $$W$$ is any positive definite matrix that satisfies $$W
 
 # Frobenius norm
 
-Frobenius norm is the only norm that is unitary invariant. 
+Frobenius norm is the only norm that is unitary invariant, which means that the frobenius norm is not changed by unitary transformation. For any square matrix, the unitary(orthgonal) transformation can be seen as $$B = R^T A R, \quad\text{where} R \text{is a unitary(orthogonal matrix)} $$.  
+
+It can also be easily proved:  
+
+$$\|A\|_F = \sqrt{\sum_{i,j} a_{ij}^2} = \sqrt{tr(A^T A)} = \sqrt{\sum_i^R \lambda_i} = \sqrt{\sum_i^R \sigma_i^2}$$, therefore  
+
+$$\| B \|_F^2 =  tr(B^T B) = tr(R^T A^T R R^T A R) = tr(R^T A^T A R) = tr(AR R^T A^T) = tr(AA^T) = \| A\|_F^2$$  
+
+
 # Derivation
 
 Define $$\hat{H} = W^{\frac{1}{2}} H W^{\frac{1}{2}}$$, $$\hat{H_k} = W^{\frac{1}{2}} H_k  W^{\frac{1}{2}}$$, $$\hat{s_k} = W^{1}{2} s_k$$, $$\hat{y_k} = W^{-\frac{1}{2}} y_k$$, then the problem becomes,  
@@ -74,7 +82,9 @@ $$\hat H=\begin{bmatrix}u & u_\bot\end{bmatrix}\begin{bmatrix}1 & 0\\0 & u_\bot^
 uu^T+(I-uu^T)\hat H_k(I-uu^T)$$
 
 
+# Interpretation
+
+From here, we can see that after the unitary transformation of the orthgonal matrix, we can easily solve the optimization problem. What else to notice is that, $$\hat{y_k}$$ is the eigenvector of $$\hat{H}$$, and the unitary transformation is basically representing the matrix in the eigenvector space.
 
 
 
-https://math.stackexchange.com/questions/2271887/how-to-solve-the-matrix-minimization-for-bfgs-update-in-quasi-newton-optimizatio
