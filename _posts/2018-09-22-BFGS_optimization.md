@@ -18,7 +18,7 @@ $$f(x+ \Delta x) = f(x) + \Delta x^T g_n + \frac{1}{2} \Delta x^T H_n \Delta x +
 Let $$h_n(\Delta x) = f(x) + \Delta x^T g_n + \frac{1}{2} \Delta x^T H_n \Delta x $$  
 
 where $$g_n$$ and $$H_n$$ is the gradient and Hessian at $$x_n$$. So we can take the derivative against $$\Delta x$$, we
-would have $$\frac{ f}{ \Delta x}  = g_n + \frac{1}{2}(H_n^T + H_b) \Delta x = g_n + H_n \Delta x}$$.  
+would have $$\frac{\partial f}{\partial \Delta x}  = g_n + \frac{1}{2}(H_n^T + H_b) \Delta x = g_n + H_n \Delta x$$.  
 
 Then we would have $$\Delta x = - H_n^{-1} g_n $$, we would know that $$ - H_n^{-1} g_n$$ is a good direction to minimize the problem. We can check this out by $$\langle\ - H_n^{-1} g_n, g_n \rangle  = - g^T (H^{-1})^T g$$, so as long as we keep H as a positive definite matrix, we are going the direction that makes the function smaller.
 
