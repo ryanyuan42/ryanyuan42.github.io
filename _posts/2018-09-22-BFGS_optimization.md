@@ -18,7 +18,7 @@ $$f(x+ \Delta x) = f(x) + \bm{\Delta x^T} \bm{g_n} + \frac{1}{2} \Delta x^T H_n 
 Let $$h_n(\bm{\Delta x}) = f(x) + \bm{\Delta x^T} \bm{g_n} + \frac{1}{2} \Delta x^T H_n \Delta x $$  
 
 where $$\bm{g_n}$$ and $$\bm{H_n}$$ is the gradient and Hessian at $$x_n$$. So we can take the derivative against $$\Delta x$$, we
-would have $$frac{\partial f}{\partial \bm{\Delta x}}  = \bm{g_n} + \frac{1}{2}(H_n^T + H_b) \bm{\Delta x} = \bm{g_n} + \bm{H_n \Delta x}$$.  
+would have $$\frac{\partial f}{\partial \bm{\Delta x}}  = \bm{g_n} + \frac{1}{2}(H_n^T + H_b) \bm{\Delta x} = \bm{g_n} + \bm{H_n \Delta x}$$.  
 
 Then we would have $$\bm{\Delta x} = - \bm{H_n^{-1} g_n} $$, we would know that $$ - \bm{H_n^{-1} g_n}$$ is a good direction to minimize the problem. We can check this out by $$< - \bm{H_n^{-1} g_n}, \bm{g_n}> = - g^T (H^{-1})^T g$$, so as long as 
 
