@@ -82,7 +82,10 @@ $$\hat H=\begin{bmatrix}u & u_\bot\end{bmatrix}\begin{bmatrix}1 & 0\\0 & u_\bot^
 uu^T+(I-uu^T)\hat H_k(I-uu^T)$$
 
 We use the fact of the orthgonal basis matrix  
-$$I=UU^T=\begin{bmatrix}u & u_\bot\end{bmatrix}\begin{bmatrix}u^T \\ u_\bot^T\end{bmatrix}=uu^T+u_\bot u_\bot^T\quad\Leftrightarrow\quad u_\bot u_\bot^T=I-uu^T.$$
+$$I=UU^T=\begin{bmatrix}u & u_\bot\end{bmatrix}\begin{bmatrix}u^T \\ u_\bot^T\end{bmatrix}=uu^T+u_\bot u_\bot^T\quad\Leftrightarrow\quad u_\bot u_\bot^T=I-uu^T.$$  
+
+Now, remember that we have the property $$W s_k = y_k$$, we expand the formula and get the BFGS update  
+$$H_{k+1} = (1-\rho_k s_k y^\top_k)H_k (1-\rho_k y_k s^\top_k)+ \rho_k s_k s^\top_k \text{where}  \rho_k = (y^\top_k s_k)^{-1} $$
 # Interpretation
 
 From here, we can see that after the unitary transformation of the orthgonal matrix, we can easily solve the optimization problem. What else to notice is that, $$\hat{y_k}$$ is the eigenvector of $$\hat{H}$$, and the unitary transformation is basically representing the matrix in the eigenvector space.
