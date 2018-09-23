@@ -61,7 +61,7 @@ we can find that, the blue part cannot be affected since it's fixed, we can only
 
 Therefore, $$\color{red}{u_\bot^T\hat Hu_\bot}=\color{red}{u_\bot^T\hat H_ku_\bot}.$$, which gives us the solution,  
 
-$$\hat H=U\begin{bmatrix}\color{blue}1 & \color{blue}0\\\color{blue}0 & \color{red}{u_\bot^T\hat H_ku_\bot}\end{bmatrix}U^T.$$
+$$\hat H=U\begin{bmatrix}\color{blue}1 & \color{blue}0\\\color{blue}0 & \color{red}{u_\bot^T\hat H_ku_\bot}\end{bmatrix}U^T.$$  
 
 $$\hat H=\begin{bmatrix}u & u_\bot\end{bmatrix}\begin{bmatrix}1 & 0\\0 & u_\bot^T\hat H_ku_\bot\end{bmatrix}\begin{bmatrix}u^T \\ u_\bot^T\end{bmatrix}=uu^T+u_\bot u_\bot^T\hat H_ku_\bot u_\bot^T=
 uu^T+(I-uu^T)\hat H_k(I-uu^T)$$
