@@ -91,4 +91,4 @@ $$H_{k+1} = (1-\rho_k s_k y^\top_k)H_k (1-\rho_k y_k s^\top_k)+ \rho_k s_k s^\to
 From here, we can see that after the unitary transformation of the orthgonal matrix, we can easily solve the optimization problem. What else to notice is that, $$\hat{y_k}$$ is the eigenvector of $$\hat{H}$$, and the unitary transformation is basically representing the matrix in the eigenvector space.
 
 
-https://math.stackexchange.com/questions/2271887/how-to-solve-the-matrix-minimization-for-bfgs-update-in-quasi-newton-optimizatio
+
