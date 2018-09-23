@@ -41,11 +41,11 @@ where the weighted forbenius norm is defined to be $$||A||_{W} = ||W^{\frac{1}{2
 
 Define $$\hat{H} = W^{\frac{1}{2}} H W^{\frac{1}{2}}$$, $$\hat{H_k} = W^{\frac{1}{2}} H_k  W^{\frac{1}{2}}$$, $$\hat{s_k} = W^{1}{2} s_k$$, $$\hat{y_k} = W^{-\frac{1}{2}} y_k$$, then the problem becomes,  
 
-$$argmin_H ||\hat{H_k} - \hat{H}||_F$$, s.t. $$\hat{H} \hat{y_k} = \hat{y_k} = \hat{s_k}$$, notice that $$\hat{y_k} = \hat{s_k}$$  
+$$\min\|\hat H_k-\hat H\|_F\quad\text{subject to }\hat H\hat y_k=\hat y_k\ = \hat s_k $$ 
 
 what else to notice is that, $$\hat{y_k}$$ is the eigenvector of $$\hat{H}$$, since $$\hat{H} \hat{y_k} = \hat{y_k} $$, then we can introduce a new orthogonal matrix, with new orthogonal basis, 
 
-$$U = [u\ |\ u_\bot]$$ where $$ u = \frac{\hat y_k}{\|\hat y_k\|} $$  
+$$U=[u\ |\ u_\bot]$$ where $$ u = \frac{\hat y_k}{\|\hat y_k\|} $$  
 
 Since Frobenius norm is unitary invariant, (as it is sum of squares of the singular values), we can get  
 
