@@ -87,4 +87,4 @@ uu^T+(I-uu^T)\hat H_k(I-uu^T)$$
 From here, we can see that after the unitary transformation of the orthgonal matrix, we can easily solve the optimization problem. What else to notice is that, $$\hat{y_k}$$ is the eigenvector of $$\hat{H}$$, and the unitary transformation is basically representing the matrix in the eigenvector space.
 
 
-
+https://math.stackexchange.com/questions/2271887/how-to-solve-the-matrix-minimization-for-bfgs-update-in-quasi-newton-optimizatio
