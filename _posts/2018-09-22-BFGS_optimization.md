@@ -13,16 +13,16 @@ share: true
 Suppose we have a function $$f: {\rm I\!R^n} \longrightarrow {\rm I\!R}$$, we want to minimize/maxmizie the function, we can use the gradient descent method, follow current gradient and keeps going, the problem is that might not be fast enough. So, for such a function,
 we can use taylor expansion to get (expand around x)  
 
-$$f(x+ \Delta x) = f(x) + \bm{\Delta x^T} \bm{g_n} + \frac{1}{2} \Delta x^T H_n \Delta x + ...$$  
+$$f(x+ \Delta x) = f(x) + \Delta x^T g_n + \frac{1}{2} \Delta x^T H_n \Delta x + ...$$  
 
-Let $$h_n(\bm{\Delta x}) = f(x) + \bm{\Delta x^T} \bm{g_n} + \frac{1}{2} \Delta x^T H_n \Delta x $$  
+Let $$h_n(\Delta x) = f(x) + \Delta x^T g_n + \frac{1}{2} \Delta x^T H_n \Delta x $$  
 
-where $$\bm{g_n}$$ and $$\bm{H_n}$$ is the gradient and Hessian at $$x_n$$. So we can take the derivative against $$\Delta x$$, we
-would have $$\frac{\partial f}{\partial \bm{\Delta x}}  = \bm{g_n} + \frac{1}{2}(H_n^T + H_b) \bm{\Delta x} = \bm{g_n} + \bm{H_n \Delta x}$$.  
+where $$g_n$$ and $$H_n$$ is the gradient and Hessian at $$x_n$$. So we can take the derivative against $$\Delta x$$, we
+would have $$\frac{\partial f}{\partial \Delta x}  = g_n + \frac{1}{2}(H_n^T + H_b) \Delta x = g_n + H_n \Delta x}$$.  
 
-Then we would have $$\bm{\Delta x} = - \bm{H_n^{-1} g_n} $$, we would know that $$ - \bm{H_n^{-1} g_n}$$ is a good direction to minimize the problem. We can check this out by $$\langle\ - \bm{H_n^{-1} g_n}, \bm{g_n} \rangle  = - g^T (H^{-1})^T g$$, so as long as we keep H as a positive definite matrix, we are going the direction that makes the function smaller.
+Then we would have $$\Delta x = - H_n^{-1} g_n $$, we would know that $$ - H_n^{-1} g_n$$ is a good direction to minimize the problem. We can check this out by $$\langle\ - H_n^{-1} g_n, g_n \rangle  = - g^T (H^{-1})^T g$$, so as long as we keep H as a positive definite matrix, we are going the direction that makes the function smaller.
 
-In practice, we would set the update as $$x_{n+1} = x_n - \alpha (\bm{H_n^{-1} g_n}) $$, where $$\alpha$$ can be seen as a step size and generally be solved by line search methods.
+In practice, we would set the update as $$x_{n+1} = x_n - \alpha (H_n^{-1} g_n) $$, where $$\alpha$$ can be seen as a step size and generally be solved by line search methods.
 
 # Quasi-Newton Method
 
@@ -35,7 +35,7 @@ To find the updating rule, we need to solve the following problem,
 
 $$argmin_H |H - H_k|_W \quad\text{subject to} H = H^T, Hy_k = s_k$$  
 
-where the weighted forbenius norm is defined to be $$|A|_{W} = |W^{\frac{1}{2}} A W^{\frac{1}{2}}|_F$$, where the weight matrix $$W$$ is any positive definite matrix that satisfies $$Ws_k = y_k$$ and we can assume that $$W = G_k^{-1}$$ where $$G_k$$ is the average hessian, $$G_k = \int_0^1 \bigtriangledown f(x_k +\tau \alpha_k p_k) d\tau$$  
+where the weighted forbenius norm is defined to be $$ |A|_W = |W^{\frac{1}{2}} A W^{\frac{1}{2}}|_F$$, where the weight matrix $$W$$ is any positive definite matrix that satisfies $$Ws_k = y_k$$ and we can assume that $$W = G_k^{-1}$$ where $$G_k$$ is the average hessian, $$G_k = \int_0^1 \bigtriangledown f(x_k +\tau \alpha_k p_k) d\tau$$  
 
 # Derivation
 
