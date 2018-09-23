@@ -37,7 +37,7 @@ $$argmin_H |H - H_k|_W \quad\text{subject to} H = H^T, Hy_k = s_k$$
 
 where the weighted forbenius norm is defined to be  
 
-$$ \| A \|_W = \| W^{\frac{1}{2}} A W^{\frac{1}{2}}|_F$$,  
+$$ \| A \|_W = \| W^{\frac{1}{2}} A W^{\frac{1}{2}}\|_F$$,  
 
 where the weight matrix $$W$$ is any positive definite matrix that satisfies $$W s_k = y_k$$ and we can assume that $$W = G_k^{-1}$$ where $$G_k$$ is the average hessian, $$G_k= \int_0^1 \nabla^2 f(x_k+\tau \alpha_k p_k)d\tau$$
 
