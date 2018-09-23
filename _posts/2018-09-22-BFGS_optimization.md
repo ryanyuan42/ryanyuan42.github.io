@@ -81,7 +81,8 @@ $$\hat H=U\begin{bmatrix}\color{blue}1 & \color{blue}0\\\color{blue}0 & \color{r
 $$\hat H=\begin{bmatrix}u & u_\bot\end{bmatrix}\begin{bmatrix}1 & 0\\0 & u_\bot^T\hat H_ku_\bot\end{bmatrix}\begin{bmatrix}u^T \\ u_\bot^T\end{bmatrix}=uu^T+u_\bot u_\bot^T\hat H_ku_\bot u_\bot^T=
 uu^T+(I-uu^T)\hat H_k(I-uu^T)$$
 
-
+We use the fact of the orthgonal basis matrix  
+$$I=UU^T=\begin{bmatrix}u & u_\bot\end{bmatrix}\begin{bmatrix}u^T \\ u_\bot^T\end{bmatrix}=uu^T+u_\bot u_\bot^T\quad\Leftrightarrow\quad u_\bot u_\bot^T=I-uu^T.$$
 # Interpretation
 
 From here, we can see that after the unitary transformation of the orthgonal matrix, we can easily solve the optimization problem. What else to notice is that, $$\hat{y_k}$$ is the eigenvector of $$\hat{H}$$, and the unitary transformation is basically representing the matrix in the eigenvector space.
