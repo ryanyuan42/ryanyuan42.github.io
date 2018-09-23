@@ -49,9 +49,7 @@ $$\min\|\hat H_k-\hat H\|_F\quad\text{subject to }\hat H\hat y_k=\hat y_k\ = \ha
 
 what else to notice is that, $$\hat{y_k}$$ is the eigenvector of $$\hat{H}$$, since $$\hat{H} \hat{y_k} = \hat{y_k} $$, then we can introduce a new orthogonal matrix, with new orthogonal basis, 
 
-$$ U = [u | u_\bot] $$  
-
-where $$ u = \frac{\hat y_k}{\|\hat y_k\|} $$  
+$$ U = [u | u_\bot] \quad\text{where} $$ u = \frac{\hat y_k}{\|\hat y_k\|} $$  
 
 Since Frobenius norm is unitary invariant, (as it is sum of squares of the singular values), we can get  
 
