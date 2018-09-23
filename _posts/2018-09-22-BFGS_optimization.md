@@ -41,6 +41,8 @@ $$ \| A \|_W = \| W^{\frac{1}{2}} A W^{\frac{1}{2}}\|_F$$,
 
 where the weight matrix $$W$$ is any positive definite matrix that satisfies $$W s_k = y_k$$ and we can assume that $$W = G_k^{-1}$$ where $$G_k$$ is the average hessian, $$G_k= \int_0^1 \nabla^2 f(x_k+\tau \alpha_k p_k)d\tau$$
 
+What else to notice here, is that we know $$W$$ is a symmetric matrix, and any symmetric matrix can be diagonalized by an orthgonal matrix, $$ Q^T W Q = D$$, where $$D$$ is a diagonal matrix with all the eigenvalues as its diagnoal values. And since $$W$$ is a positive definite matrix, there exist a matrix $$B$$ such that $$B B = W$$. For example, we know that $$W = Q D Q^T$$ and we let $$B = Q D' Q^T$$ where $$D'_{ii} = \sqrt{D_{ii}}$$, and we can easily prove that $$B B = W$$.  
+
 # Frobenius norm
 
 Frobenius norm is the only norm that is unitary invariant, which means that the frobenius norm is not changed by unitary transformation. For any square matrix, the unitary(orthgonal) transformation can be seen as $$B = R^T A R, \quad\text{where} R \text{is a unitary(orthogonal matrix)} $$.  
