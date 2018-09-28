@@ -41,8 +41,8 @@ What to noice here, is that, $$y_i = \phi_i^T x$$, which is easy to prove. Suppo
 vectors, replace $$[y_{M+1}, ... y_N]^T$$ with some pre-selected constants $$b_i$$.  
 
 Then we can represent the new x as $$\hat{x}(M) = \sum_{i=1}^M y_i \phi_i + \sum_{i=M+1}^N b_i \phi_i$$, therefore the error 
-is $$\delta x(M) = x - \hat{x}(M) = \sum_{i=M+1}^N (y_i - b_i) \phi_i$$, here we try to minimize the mean square error,
-$$error = E[( \delta x(m) ) ^ 2] = E[\sum_{i=M+1}^N \sum_{j=M+1}^N (y_i - b_i)(y_j - b_j) \phi_i^T \phi_j] = \sum_{i=M+1}^N 
+is $$\Delta x(M) = x - \hat{x}(M) = \sum_{i=M+1}^N (y_i - b_i) \phi_i$$, here we try to minimize the mean square error,
+$$error = E[( \Delta x(m) ) ^ 2] = E[\sum_{i=M+1}^N \sum_{j=M+1}^N (y_i - b_i)(y_j - b_j) \phi_i^T \phi_j] = \sum_{i=M+1}^N 
 E[(y_i - b_i)^2]$$  
 
 To find the optimal $$b_i$$, we take derivative of $$b_i$$, we should get $$b_i = E[y_i]$$. Now,  
