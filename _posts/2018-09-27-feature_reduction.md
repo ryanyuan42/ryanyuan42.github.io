@@ -35,7 +35,7 @@ Feature extraction can be classified into two groups:
 
 # PCA
 
-For a vector $$x \belong R^N$$, and let $$U = [\phi_1 \mid \phi_2 ... \mid \phi_N]$$ be an orthogonal matrix, the $$\phi_i$$ are
+For a vector $$x \in R^N$$, and let $$U = [\phi_1 \mid \phi_2 ... \mid \phi_N]$$ be an orthogonal matrix, the $$\phi_i$$ are
 basis vectors in $$R^N$$. Therefore, we can represent $$x$$ as a linear combination of the basis vectors. $$x = \sum_{i=1}^N y_i \phi_i$$
 What to noice here, is that, $$y_i = \phi_i^T x$$, which is easy to prove. Suppose we want to represent x with only M basis 
 vectors, replace $$[y_{M+1}, ... y_N]^T$$ with some pre-selected constants $$b_i$$.  
