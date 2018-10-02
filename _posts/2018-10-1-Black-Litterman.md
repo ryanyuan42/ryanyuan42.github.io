@@ -39,7 +39,7 @@ matrix $$q$$ as
 
 $$P = \begin{bmatrix}  1 & 0 & -1 & 0 \\ 0 & 1 & 0 & 0 \end{bmatrix}$$  
 $$q = \begin{bmatrix} 2 \\ 3 \end{bmatrix}$$  
-$$\Omega = \begin{bmatrix} \omega_11 & 0 \\ 0 & \omega_22 \end{bmatrix}$$  
+$$\Omega = \begin{bmatrix} \omega_{11} & 0 \\ 0 & \omega_{22} \end{bmatrix}$$  
 
 Then, by saying those views, we are saying, $$E[P r] = q$$, then we are saying a model that $$P \mu = q + \epsilon, \text{where} \epsilon \sim
 N(0, \Omega)$$, then we will have $$q \mid \mu \propto exp(-\frac{1}{2} (q - P\mu)^T \Omega^{-1} (q - P\mu)) $$ and $$\mu \propto 
