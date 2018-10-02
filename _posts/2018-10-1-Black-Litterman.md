@@ -41,7 +41,7 @@ $$P = \begin{bmatrix}  1 & 0 & -1 & 0 \\ 0 & 1 & 0 & 0 \end{bmatrix}$$
 $$q = \begin{bmatrix} 2 \\ 3 \end{bmatrix}$$  
 $$\Omega = \begin{bmatrix} \omega_11 & 0 \\ 0 & \omega_22 \end{bmatrix}$$  
 
-Then, by saying those views, we are saying, $$E[P r] = q$$, then we are saying a model that $$P \mu = q + \eps, \text{where} \eps \sim
+Then, by saying those views, we are saying, $$E[P r] = q$$, then we are saying a model that $$P \mu = q + \epsilon, \text{where} \epsilon \sim
 N(0, \Omega)$$, then we will have $$q \mid \mu \propto exp(-\frac{1}{2} (q - P\mu)^T \Omega^{-1} (q - P\mu)) $$ and $$\mu \propto 
 exp(-\frac{1}{2} (\mu - \pi)^T  \Sigma_{\pi}^{-1} (\mu - \pi))$$.  
 
@@ -54,7 +54,7 @@ now we let $$A = P^T \Omega^{-1} P + C^{-1} \text{and} b^T = (q^T \Omega^{-1} P 
 \mu^T A \mu - 2 \mu^T b = \mu^T A \mu - 2 \mu^T A A^{-1}b \propto (\mu - A^{-1}b)^T A (\mu - A^{-1}b)$$  
 
 Therefore, we know that the posterior mean is $$A^{-1} b$$ and the posterior varaince is $$A^{-1}$$, which is that the posterior 
-distribution is $$N( (P^T \Omega^{-1} P + \Sigma_{\pi}^{-1})^{-1}) * (P^T \Omega^{-1} q + \Omega_{\pi}^{-1} \pi ),  (P^T \Omega^{-1} P + \Omega_{\pi}^{-1})^{-1})$$  
+distribution is $$N( (P^T \Omega^{-1} P + \Sigma_{\pi}^{-1})^{-1}) * (P^T \Omega^{-1} q + \Sigma_{\pi}^{-1} \pi ),  (P^T \Omega^{-1} P + \Sigma_{\pi}^{-1})^{-1})$$  
 
 
 Traditional black-litterman has $$\pi$$ be the equilibrium return and the $$\Sigma_{\pi}^{-1} = \tau \Sigma$$.
