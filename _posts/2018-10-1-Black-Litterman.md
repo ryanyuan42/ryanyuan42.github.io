@@ -57,7 +57,7 @@ Therefore, we know that the posterior mean is $$A^{-1} b$$ and the posterior var
 distribution is $$N( (P^T \Omega^{-1} P + \Sigma_{\pi}^{-1})^{-1}) * (P^T \Omega^{-1} q + \Sigma_{\pi}^{-1} \pi ),  (P^T \Omega^{-1} P + \Sigma_{\pi}^{-1})^{-1})$$  
 
 
-Traditional black-litterman has $$\pi$$ be the equilibrium return and the $$\Sigma_{\pi}^{-1} = \tau \Sigma$$.
+Traditional black-litterman has $$\pi$$ be the equilibrium return and the $$\Sigma_{\pi} = \tau \Sigma$$.
 
 
 
