@@ -47,7 +47,7 @@ because $$\partial g(prox_f (y)) \supseteq \partial g(y)$$, therefore we have
 
 Let $$p, q > 0$$ such that $$\frac{1}{p} + \frac{1}{q} = 1$$  
 
-Consider the function $$f(x) = ||x||_p $$  
+Consider the function $$f(x) = x_p $$  
 
 Show that $$ \forall x, y: x^T y \leq ||x||_p ||y||_q $$
 
