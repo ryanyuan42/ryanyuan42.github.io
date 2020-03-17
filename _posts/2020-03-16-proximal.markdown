@@ -8,20 +8,4 @@ comments: true
 share: true
 ---
 
-$$ \item[(d, 5 pts)] Show that if $\forall y \in \operatorname{dom}(g)$, $\partial g(\prox_f (y)) \supseteq \partial g(y)$, then 
-        \begin{align}
-            \prox_{f+g}(x) = \prox_{f}(\prox_{g}(x))
-        \end{align}
-    Hints: 
-    \begin{enumerate}
-        \item[1.] Consider $\prox_{f+g}(x)$, $\prox_g(x)$, and $\prox_f (\prox_g (x))$.
-        \item[2.] The solution of the proximal can be characterized as: 
-        \[
-            u = \prox_h(x) := \argmin_u \frac 1 2 \| u - x\|_2^2 + h(u) 
-                \iff 
-            0 \in u - x + \partial h(u) 
-        \]
-        \item[3.] $\partial (f+g) = \partial f + \partial g$
-    \end{enumerate}
-    $$
-
+Consider the following question
