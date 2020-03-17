@@ -9,3 +9,5 @@ share: true
 ---
 
 Consider the following question
+
+Show that if $$\forall y \in \operatorname{dom}(g)$, $\partial g(\prox_f (y)) \supseteq \partial g(y)$$, then $$ \prox_{f+g}(x) = \prox_{f}(\prox_{g}(x))$$
