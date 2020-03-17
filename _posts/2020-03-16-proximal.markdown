@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Proximal Operator"
-excerpt: 
+excerpt: ""
 categories: articles
 tags: [convex optimization]
 comments: true
