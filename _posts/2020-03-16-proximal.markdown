@@ -10,4 +10,17 @@ share: true
 
 Consider the following question
 
-Show that if $$\forall y \in \operatorname{dom}(g)$, $\partial g(\prox_f (y)) \supseteq \partial g(y)$$, then $$ \prox_{f+g}(x) = \prox_{f}(\prox_{g}(x))$$
+Show that if $$\forall y \in \operatorname{dom}(g)$, $\partial g(prox_f (y)) \supseteq \partial g(y)$$, then $$ prox_{f+g}(x) = prox_{f}(prox_{g}(x))$$
+
+
+Proof:  
+
+$$prox_{f+g} = argmin \frac{1}{2} ||z - x||_2^2 + f(z) + g(z)$$  
+
+$$prox_{f} = argmin \frac{1}{2} ||z - x||_2^2 + f(z)$$
+
+$$prox_{g} = argmin \frac{1}{2} ||z - x||_2^2 + g(z)$$
+
+WTS $$prox_{f}(prox_{g}(x)) = argmin \frac{1}{2} ||prox_g(x) - z||_2^2 + f(z) = argmin \frac{1}{2} ||z - x||_2^2 + f(z) + g(z)$$ 
+
+WTS $$0 \in z - prox_g(x) - \partial f(z)$$ and $$0 \in z - x + \partial f(z) + \partial g(z)$$
