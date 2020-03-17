@@ -45,7 +45,10 @@ because $$\partial g(prox_f (y)) \supseteq \partial g(y)$$, therefore we have
  
 ## Q2  
 
-Let $$p, q > 0$$ such that $$\frac{1}{p} + \frac{1}{q} = 1$$. Consider the function $$f(x) = ||x||_{p} $$
+Let $$p, q > 0$$ such that $$\frac{1}{p} + \frac{1}{q} = 1$$  
+
+Consider the function $$f(x) = ||x||_p $$  
+
 Show that $$ \forall x, y: x^T y \leq ||x||_p ||y||_q $$
 
 $$f(x) = ||x||_p = \max_{||z||_q \leq 1} z^T x \geq (\frac{y}{||y||_q})^T x$$
@@ -53,4 +56,11 @@ $$f(x) = ||x||_p = \max_{||z||_q \leq 1} z^T x \geq (\frac{y}{||y||_q})^T x$$
 therefore, $$ ||x||_p ||y||_q \geq y^T x $$
 
 
-User H\"{o}lder's inequality to prove $$f(x) = ||x||_p,  \partial f(x) = argmax_{||z||_q \leq 1} z^Tx$$
+User H\"{o}lder's inequality to prove $$f(x) = ||x||_p,  \partial f(x) = argmax_{||z||_q \leq 1} z^Tx $$
+
+
+Proof: 
+
+
+we know the $$ \max_{||z||_q \leq 1} z^T x = ||x||_p $$
+Want to show 
