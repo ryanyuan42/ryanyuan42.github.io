@@ -10,7 +10,7 @@ share: true
 
 Consider the following question
 
-Show that if $$\forall y \in \operatorname{dom}(g)$, $\partial g(prox_f (y)) \supseteq \partial g(y)$$, then $$ prox_{f+g}(x) = prox_{f}(prox_{g}(x))$$
+Show that if $$\forall y \in \operatorname{dom}(g), \partial g(prox_f (y)) \supseteq \partial g(y)$$, then $$ prox_{f+g}(x) = prox_{f}(prox_{g}(x))$$
 
 
 Proof:  
@@ -21,19 +21,22 @@ $$prox_{f} = argmin \frac{1}{2} ||z - x||_2^2 + f(z)$$
 
 $$prox_{g} = argmin \frac{1}{2} ||z - x||_2^2 + g(z)$$
 
-WTS $$prox_{f}(prox_{g}(x)) = argmin \frac{1}{2} ||prox_g(x) - x||_2^2 $$   
+$$0 \in prox_{f+g}(x) - x + \partial f(prox_{f+g}(x)) + \partial g(prox_{f+g}(x)))$$
 
-WTS $$0 \in z - prox_g(x) + \partial f(z)$$ and $$0 \in z - x + \partial f(z) + \partial g(z)$$
+$$0 \in prox_{g}(x) - x + \partial g(prox_g(x))$$
 
+$$0 \in prox_f(prox_g(x)) - prox_g(x) + \partial f(prox_f(prox_g(x)))$$
 
-So the proof becomes if $$0 \in z - prox_g(x) + \partial f(z)$$, we need to prove $$0 \in z - x + \partial f(z) + \partial g(z)$$, and 
-if $$0 \in z - x + \partial f(z) + \partial g(z)$$, then $$0 \in z - prox_g(x) - \partial f(z)$$
+Sum up the last 2 statement, we know  
 
-if $$0 \in z - prox_g(x) + \partial f(z)$$, we have $$z \in prox_g(x) - \partial f(z) $$
+$$0 \in prox_f(prox_g(x)) - x + \partial g(prox_g(x)) + \partial f(prox_f(prox_g(x)))$$
 
-and we know $$0 \in prox_g(x) - x + \partial g(prox_g(x))$$ by the definition of $$prox_g(x)$$  
+Let $$y = prox_g(x)$$, $$0 \in prox_f(y) - x + \partial g(y) + \partial f(prox_f(y))$$
 
-therefore, $$z \in x - \partial g(prox_g(x)) - \partial f(z)$$
+because $$\partial g(prox_f (y)) \supseteq \partial g(y)$$, therefore we have
 
-
-
+ $$0 \in prox_f(y) - x + \partial g(prox_f (y)) + \partial f(prox_f(y))$$
+ 
+ apparently this says, $$prox_f(y)$$ satisfy, $$0 \in prox_{f+g}(x) - x + \partial f(prox_{f+g}(x)) + \partial g(prox_{f+g}(x)))$$,
+ 
+ which means $$prox_f(prox_g(x)) = prox_{f+g}(x)$$
