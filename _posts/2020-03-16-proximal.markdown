@@ -31,7 +31,9 @@ if $$0 \in z - x + \partial f(z) + \partial g(z)$$, then $$0 \in z - prox_g(x) -
 
 if $$0 \in z - prox_g(x) - \partial f(z)$$, we have $$z \in prox_g(x) - \partial f(z) $$
 
-and we know $0 \in prox_g(x) - x + \partial g(prox_g(x))$$ by the definition of $$prox_g(x)$$  
+and we know $$0 \in prox_g(x) - x + \partial g(prox_g(x))$$ by the definition of $$prox_g(x)$$  
+
+therefore, $$z \in x - \partial g(prox_g(x)) - \partial f(z)$$
 
 
 
