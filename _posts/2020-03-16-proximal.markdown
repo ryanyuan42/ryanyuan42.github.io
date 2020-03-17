@@ -7,6 +7,7 @@ tags: [convex optimization]
 comments: true
 share: true
 ---
+## Q1  
 
 Consider the following question
 
@@ -42,7 +43,8 @@ because $$\partial g(prox_f (y)) \supseteq \partial g(y)$$, therefore we have
  which means $$prox_f(prox_g(x)) = prox_{f+g}(x)$$
  
  
- 
+## Q2  
+
 Let $$p, q > 0$$ such that $$\frac{1}{p} + \frac{1}{q} = 1$$. Consider the function $$f(x) = ||x||_p $$ Show that $$\forall x, y$$: $$x^Ty \leq ||x||_p||y||_q.$$
 The above inequality is known as H\"{o}lder's inequality.  Hint: you may use the dual representation of the $\ell_p$ norm, namely, $$||x||_p = \max_{||z||_q \leq 1} z^T x$$.
 
