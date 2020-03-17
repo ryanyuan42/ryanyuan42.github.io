@@ -45,23 +45,37 @@ because $$\partial g(prox_f (y)) \supseteq \partial g(y)$$, therefore we have
  
 ## Q2  
 
-Let $$p, q > 0$$ such that $$\frac{1}{p} + \frac{1}{q} = 1$$  
+Use H\"{o}lder's inequality to show that for $$f(x)=||x||_p$$, its subdifferential is $$\partial f(x) = argmax_{||z||_q \leq 1} z^T x$$
+              
 
-Consider the function $$ f(x) = ||x||_p $$   
+    Proof:  
 
-Show that $$ for all x, y: x^T y \leq x_p y_q $$  
+    we know the  $$\max_{||z||_q \leq 1} z^T x = ||x||_p $$
 
-$$f(x) = ||x||_p = \max_{||z||_q \leq 1} z^T x \geq (\frac{y}{||y||_q})^T x $$  
+    So we want to show that $$\partial ||x||_p = \{z \mid \|z\|_q \le 1 \text{ and } z^\top x = \|x\|_p\} $$
+    
+    If $$z \in \partial ||x||_p$$, we have $$||y||_p \geq ||x||_p + z^T(y-x)$$
+    
+    Let y = 0 and y = 2x, we have $$z^Tx = ||x||_p$$, plug it into the inequality
+    we have $$||y||_p \geq z^Ty$$
+    
+    $$\frac{z^Ty}{||y||_p} \leq 1$$, let $$u = \frac{y}{||y||_p}$$, 
+    $$u^Tz \leq 1$ $$
+    
+    we know that $$\max_{||u||_p \leq 1}u^Tz = ||z||_q$$, so $$||z||_q \leq 1$$,
+    which means 
+    
+    $$z \in \{z \mid \|z\|_q \le 1 \text{ and } z^\top x = \|x\|_p\}$$
+    
+    If $$z \in \{z \mid \|z\|_q \le 1 \text{ and } z^\top x = \|x\|_p\}$$
+    
+    then by H\"{o}lder's inequality $$z^Ty \leq ||y||_p||z||_q \leq ||y||_p$$
+    
+    $$||y||_p \geq ||x||_p + z^T - ||x||_p = ||x||_p + z^T(y-x)$$
+    
+    therefore, $$z \in \partial ||x||_p$$
+    
+    $$\partial ||x||_p = \{z \mid \|z\|_q \le 1 \text{ and } z^\top x = \|x\|_p\} = argmax_{||z||_q \leq 1} z^T x$$
 
-therefore, $$ x_p y_q \geq y^T x $$  
 
 
-User H\"{o}lder's inequality to prove $$f(x) = ||x||_p,  \partial f(x) = argmax_{||z||_q \leq 1} z^Tx $$  
-
-
-Proof: 
-
-
-we know the $$ \max_{||z||_q \leq 1} z^T x = ||x||_p $$  
-
-So we want to show that $$\partial ||x||_p = \{z \mid \|z\|_q \le 1 \text{ and } z^\top x = \|x\|_p\} $$
