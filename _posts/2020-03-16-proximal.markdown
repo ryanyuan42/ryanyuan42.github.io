@@ -47,13 +47,13 @@ because $$\partial g(prox_f (y)) \supseteq \partial g(y)$$, therefore we have
 
 Let $$p, q > 0$$ such that $$\frac{1}{p} + \frac{1}{q} = 1$$  
 
-Consider the function $$f(x) = x_p $$   
+Consider the function $$ f(x) = ||x||_p $$   
 
 Show that $$ for all x, y: x^T y \leq x_p y_q $$  
 
-$$f(x) = ||x||_p = \max_{||z||_q \leq 1} z^T x \geq (\frac{y}{||y||_q})^T x$$  
+$$f(x) = ||x||_p = \max_{||z||_q \leq 1} z^T x \geq (\frac{y}{||y||_q})^T x $$  
 
-therefore, $$ ||x||_p ||y||_q \geq y^T x $$  
+therefore, $$ x_p y_q \geq y^T x $$  
 
 
 User H\"{o}lder's inequality to prove $$f(x) = ||x||_p,  \partial f(x) = argmax_{||z||_q \leq 1} z^Tx $$  
