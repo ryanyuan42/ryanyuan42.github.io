@@ -21,7 +21,7 @@ $$prox_{f} = argmin \frac{1}{2} ||z - x||_2^2 + f(z)$$
 
 $$prox_{g} = argmin \frac{1}{2} ||z - x||_2^2 + g(z)$$
 
-WTS $$prox_{f}(prox_{g}(x)) = argmin \frac{1}{2} ||prox_g(x) - x||_2^2 + f(z) = argmin \frac{1}{2} ||z - x||_2^2 + f(z) + g(z)$$   
+WTS $$prox_{f}(prox_{g}(x)) = argmin \frac{1}{2} ||prox_g(x) - x||_2^2 $$   
 
 WTS $$0 \in z - prox_g(x) - \partial f(z)$$ and $$0 \in z - x + \partial f(z) + \partial g(z)$$
 
