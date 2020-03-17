@@ -62,5 +62,6 @@ User H\"{o}lder's inequality to prove $$f(x) = ||x||_p,  \partial f(x) = argmax_
 Proof: 
 
 
-we know the $$ \max_{||z||_q \leq 1} z^T x = ||x||_p $$
+we know the $$ \max_{||z||_q \leq 1} z^T x = ||x||_p $$  
+
 So we want to show that $$\partial ||x||_p = \{z \mid \|z\|_q \le 1 \text{ and } z^\top x = \|x\|_p\} $$
