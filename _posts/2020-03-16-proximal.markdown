@@ -49,7 +49,7 @@ Let $$p, q > 0$$ such that $$\frac{1}{p} + \frac{1}{q} = 1$$
 
 Consider the function $$f(x) = x_p $$  
 
-Show that $$ \forall x, y: x^T y \leq ||x||_p ||y||_q $$
+Show that $$ for all x, y: x^T y \leq x_p y_q $$
 
 $$f(x) = ||x||_p = \max_{||z||_q \leq 1} z^T x \geq (\frac{y}{||y||_q})^T x$$
 
