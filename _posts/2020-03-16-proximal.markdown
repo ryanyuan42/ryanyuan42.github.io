@@ -63,4 +63,4 @@ Proof:
 
 
 we know the $$ \max_{||z||_q \leq 1} z^T x = ||x||_p $$
-Want to show 
+So we want to show that $$\partial ||x||_p = \{z \mid \|z\|_q \le 1 \text{ and } z^\top x = \|x\|_p\} $$
