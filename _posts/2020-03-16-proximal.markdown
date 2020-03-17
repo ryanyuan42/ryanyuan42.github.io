@@ -48,7 +48,7 @@ The above inequality is known as H\"{o}lder's inequality.  Hint: you may use the
 
 $$f(x) = ||x||_p = \max_{||z||_q \leq 1} z^T x \geq (\frac{y}{||y||_q})^T x$$
 
-therefore, $$||x||_p||y||_q \geq y^Tx$$
+therefore, $$ ||x||_p ||y||_q \geq y^T x $$
 
 
 User H\"{o}lder's inequality to prove 
