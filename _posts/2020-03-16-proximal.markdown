@@ -23,13 +23,13 @@ $$prox_{g} = argmin \frac{1}{2} ||z - x||_2^2 + g(z)$$
 
 WTS $$prox_{f}(prox_{g}(x)) = argmin \frac{1}{2} ||prox_g(x) - x||_2^2 $$   
 
-WTS $$0 \in z - prox_g(x) - \partial f(z)$$ and $$0 \in z - x + \partial f(z) + \partial g(z)$$
+WTS $$0 \in z - prox_g(x) + \partial f(z)$$ and $$0 \in z - x + \partial f(z) + \partial g(z)$$
 
 
-So the proof becomes if $$0 \in z - prox_g(x) - \partial f(z)$$, we need to prove $$0 \in z - x + \partial f(z) + \partial g(z)$$, and 
+So the proof becomes if $$0 \in z - prox_g(x) + \partial f(z)$$, we need to prove $$0 \in z - x + \partial f(z) + \partial g(z)$$, and 
 if $$0 \in z - x + \partial f(z) + \partial g(z)$$, then $$0 \in z - prox_g(x) - \partial f(z)$$
 
-if $$0 \in z - prox_g(x) - \partial f(z)$$, we have $$z \in prox_g(x) - \partial f(z) $$
+if $$0 \in z - prox_g(x) + \partial f(z)$$, we have $$z \in prox_g(x) - \partial f(z) $$
 
 and we know $$0 \in prox_g(x) - x + \partial g(prox_g(x))$$ by the definition of $$prox_g(x)$$  
 
