@@ -40,3 +40,8 @@ because $$\partial g(prox_f (y)) \supseteq \partial g(y)$$, therefore we have
  apparently this says, $$prox_f(y)$$ satisfy, $$0 \in prox_{f+g}(x) - x + \partial f(prox_{f+g}(x)) + \partial g(prox_{f+g}(x)))$$,
  
  which means $$prox_f(prox_g(x)) = prox_{f+g}(x)$$
+ 
+ 
+ 
+Let $$p, q > 0$$ such that $$\frac{1}{p} + \frac{1}{q} = 1$$. Consider the function $$f(x) = ||x||_p=(\sum_{i=1}^nx_i^p)^{1/p}$$. Show that $$\forall x, y$$: $$x^Ty \leq ||x||_p||y||_q.$$
+The above inequality is known as H\"{o}lder's inequality.  Hint: you may use the dual representation of the $\ell_p$ norm, namely, $$||x||_p = \max_{||z||_q \leq 1} z^T x$$.
