@@ -53,4 +53,4 @@ $$f(x) = ||x||_p = \max_{||z||_q \leq 1} z^T x \geq (\frac{y}{||y||_q})^T x$$
 therefore, $$ ||x||_p ||y||_q \geq y^T x $$
 
 
-User H\"{o}lder's inequality to prove 
+User H\"{o}lder's inequality to prove $$f(x) = ||x||_p,  \partial f(x) = argmax_{||z||_q \leq 1} z^Tx$$
