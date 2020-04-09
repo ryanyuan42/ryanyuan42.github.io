@@ -45,7 +45,9 @@ because $$\partial g(prox_f (y)) \supseteq \partial g(y)$$, therefore we have
  
 ## Q2  
 
-Use H\"{o}lder's inequality to show that for $$f(x)=||x||_p$$, its subdifferential is $$\partial f(x) = argmax_{||z||_q \leq 1} z^T x$$
+Use Holder's inequality to show that for $$f(x)=\|x\|_p$$, 
+
+its subdifferential is $$\partial f(x) = argmax_{||z||_q \leq 1} z^T x$$
               
 It's too hard to write it form the blog latex, so I chose to put a solution pdf [here](https://github.com/ryanyuan42/ryanyuan42.github.io/blob/master/assets/convex_opt_hw2.pdf)
 
