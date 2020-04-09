@@ -47,35 +47,5 @@ because $$\partial g(prox_f (y)) \supseteq \partial g(y)$$, therefore we have
 
 Use H\"{o}lder's inequality to show that for $$f(x)=||x||_p$$, its subdifferential is $$\partial f(x) = argmax_{||z||_q \leq 1} z^T x$$
               
-
-    Proof:  
-
-    we know the  $$\max_{||z||_q \leq 1} z^T x = ||x||_p $$
-
-    So we want to show that $$\partial ||x||_p = \{z \mid \|z\|_q \le 1 \text{ and } z^\top x = \|x\|_p\} $$
-    
-    If $$z \in \partial ||x||_p$$, we have $$||y||_p \geq ||x||_p + z^T(y-x)$$
-    
-    Let y = 0 and y = 2x, we have $$z^Tx = ||x||_p$$, plug it into the inequality
-    we have $$||y||_p \geq z^Ty$$
-    
-    $$\frac{z^Ty}{||y||_p} \leq 1$$, let $$u = \frac{y}{||y||_p}$$, 
-    $$u^Tz \leq 1$ $$
-    
-    we know that $$\max_{||u||_p \leq 1}u^Tz = ||z||_q$$, so $$||z||_q \leq 1$$,
-    which means 
-    
-    $$z \in \{z \mid \|z\|_q \le 1 \text{ and } z^\top x = \|x\|_p\}$$
-    
-    If $$z \in \{z \mid \|z\|_q \le 1 \text{ and } z^\top x = \|x\|_p\}$$
-    
-    then by H\"{o}lder's inequality $$z^Ty \leq ||y||_p||z||_q \leq ||y||_p$$
-    
-    $$||y||_p \geq ||x||_p + z^T - ||x||_p = ||x||_p + z^T(y-x)$$
-    
-    therefore, $$z \in \partial ||x||_p$$
-    
-    $$\partial ||x||_p = \{z \mid \|z\|_q \le 1 \text{ and } z^\top x = \|x\|_p\} = argmax_{||z||_q \leq 1} z^T x$$
-
-
+It's too hard to write it form the blog latex, so I chose to put a solution pdf [here](https://github.com/ryanyuan42/ryanyuan42.github.io/blob/master/assets/convex_opt_hw2.pdf)
 
