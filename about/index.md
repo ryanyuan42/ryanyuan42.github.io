@@ -11,8 +11,8 @@ image:
 
 
 ## Quant Researcher
-This is Tianshu's site. 
-I spent:
+This is Tianshu's site.  
+I spent:  
 3 Years being undergraduate in Shanghai University of Finance and Economics.  
 1 Year being an exchange student in University of California, Berkeley.  
 1.5 Year being a graudate student in North Carolina State University.  
