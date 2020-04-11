@@ -29,7 +29,7 @@ $$v_{(j)} = \frac{z_{(j)}}{\|z_{(j)}\|_2}$$
 
 else, any $$\|v_{(j)}\|_2$$ such that $$\|v_{(j)}\|_2 \leq 1 $$ belongs to the subdifferential $$\partial\|z_{(j)}\|_2$$
 
-If $$z_{(j)} = 0$$,  $$0 = z_{(j)} - \beta_{(j)} + \lambda t w_j \frac{z_{(j)}}{\|z_{(j)}\|_2}$$
+If $$z_{(j)} \neq 0$$,  $$0 = z_{(j)} - \beta_{(j)} + \lambda t w_j \frac{z_{(j)}}{\|z_{(j)}\|_2}$$
 
 $$z_{(j)} = (I + diag(\lambda t \frac{w_j}{\|z_{(j)}\|_2}))^{-1} \beta_{(j)} = (1 + \lambda t \frac{w_j}{\|z_{(j)}\|_2})^{-1} \beta_{(j)}$$, we can do this becase the element on the diagnoal matrix is all the same
 
