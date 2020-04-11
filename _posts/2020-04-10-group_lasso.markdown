@@ -49,6 +49,7 @@ therefore, $$z_{j} = (1 - \frac{\lambda t w_j}{\|\beta_{(j)}\|_2})_{+} \beta_{(j
 
 $$prox_{th}(\beta_{(j)}) = (1 - \frac{\lambda t w_j}{\|\beta_{(j)}\|_2})_{+} \beta_{(j)}$$
 
+So our update rule for group laso is:
 
 $$\beta_{(j)}^k = prox_{t_kh}(\beta_{(j)}^{k-1} - t_k \nabla g(\beta_{(j)}^{k-1})) = prox_{t_kh}(\beta_{(j)}^{k-1}  - \frac{t_k}{N} [(X^{(j)})^T (X\beta^{k-1} - y)])$$
 
