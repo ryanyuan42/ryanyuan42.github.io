@@ -11,7 +11,9 @@ share: true
 Consider a group lasso problem:
 
 $$min \frac{1}{2N} \|X\beta - y\|_2^2 + \lambda \Sigma_j w_j \|\beta_{(j)}\|_2$$, A common choice for weights on groups $$w_j$$ is $$\sqrt{p_j}$$, 
-where $$p_j$$ is number of predictors that belong to the $$j$$th group, to adjust for the group sizes.
+where $$p_j$$ is number of predictors that belong to the $$j$$th group, to adjust for the group sizes.  
+
+If we treat every feature as a single group, group lasso become regular lasso problem.  
 
 
 Derivation:
