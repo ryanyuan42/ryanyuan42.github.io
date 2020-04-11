@@ -62,7 +62,11 @@ def proximal(beta, lam, t, weight):
     coef = max(1 - lam * t * weight / np.linalg.norm(beta, 2), 0)
     return coef * beta
 
-
+def grad_goup(X, y, beta, group):
+    N = X.shape[0]
+    return np.dot(X[:, group].T, X@beta -  y) / N
+    
+    
 def obj(X, y, beta, groups, lam):
     N = X.shape[0]
     p = X.shape[0]
