@@ -77,7 +77,6 @@ def obj(X, y, beta, groups, lam):
     
 
 def pgd(X, y, groups, epoch, step, lam):
-    # groups = [[0], [1], [2, 3, 4, 5, 6], [7, 8, 9, 10, 11, 12], [13, 14], [15], [16], [17], [18]]
     weights = [np.sqrt(len(g)) for g in groups]
     beta = np.random.normal(size=X.shape[1])
     loss_hist = []
