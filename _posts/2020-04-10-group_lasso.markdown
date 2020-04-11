@@ -53,6 +53,10 @@ $$prox_{th}(\beta_{(j)}) = (1 - \frac{\lambda t w_j}{\|\beta_{(j)}\|_2})_{+} \be
 
 $$\beta_{(j)}^k = prox_{t_kh}(\beta_{(j)}^{k-1} - t_k \nabla g(\beta_{(j)}^{k-1})) = prox_{t_kh}(\beta_{(j)}^{k-1}  - \frac{t_k}{N} [(X^{(j)})^T (X\beta^{k-1} - y)])$$
 
+
+We can implement proximal gradient descent as follows:
+
+
 {% highlight python %}
 def proximal(beta, lam, t, weight):
     coef = max(1 - lam * t * weight / np.linalg.norm(beta, 2), 0)
