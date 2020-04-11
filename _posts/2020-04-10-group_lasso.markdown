@@ -54,7 +54,7 @@ $$prox_{th}(\beta_{(j)}) = (1 - \frac{\lambda t w_j}{\|\beta_{(j)}\|_2})_{+} \be
 $$\beta_{(j)}^k = prox_{t_kh}(\beta_{(j)}^{k-1} - t_k \nabla g(\beta_{(j)}^{k-1})) = prox_{t_kh}(\beta_{(j)}^{k-1}  - \frac{t_k}{N} [(X^{(j)})^T (X\beta^{k-1} - y)])$$
 
 
-We can implement proximal gradient descent as follows:
+We can implement proximal gradient descent as follows, and even with acceleration:
 
 
 {% highlight python %}
@@ -100,4 +100,43 @@ def pgd(X, y, groups, epoch, step, lam):
         epoch -= 1
         
     return np.array(loss_hist), beta
+    
+
+def pgd_accelerated(X, y, groups, epoch, step, lam):
+    
+    weights = [np.sqrt(len(g)) for g in groups]
+    beta = np.random.normal(size=X.shape[1])
+    prev_beta = beta.copy()
+    
+    loss_hist = []
+    N = X.shape[0]
+    n_groups = len(groups)
+    
+    loss_hist = []
+    k = 1
+    while epoch > 0:
+
+        v = beta + (k - 2) / (k + 1) * (beta - prev_beta)
+        next_beta = np.empty(beta.shape)
+        
+        for i, g in enumerate(groups):
+            if i == n_groups - 1:
+                next_beta[g] = v[g] - step * grad_goup(X, y, v, g)
+            else:
+                next_beta[g] = proximal(v[g] - step * grad_goup(X, y, v, g), lam, step, weights[i])
+
+        loss = obj(X, y, next_beta, groups, lam)
+        print("loss: ", loss)
+        loss_hist.append(loss)
+        
+        
+        prev_beta = beta
+        beta = next_beta
+        
+        epoch -= 1
+        k += 1
+        
+    return np.array(loss_hist), beta
 {% endhighlight %}
+
+![proximal loss history](https://raw.githubusercontent.com/ryanyuan42/ryanyuan42.github.io/master/assets/proximal_accleartion.JPG)
