@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Group Lasso"
+title: "Group Lasso With Proximal Gradient Descent"
 excerpt: ""
 categories: articles
 tags: [convex optimization]
