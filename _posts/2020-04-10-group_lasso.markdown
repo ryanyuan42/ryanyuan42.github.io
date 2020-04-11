@@ -27,8 +27,7 @@ $$0 = z_{(j)} - \beta_{(j)} + \lambda t w_j v_{(j)}$$
 If $$z_{(j)} \neq 0$$
 $$v_{(j)} = \frac{z_{(j)}}{\|z_{(j)}\|_2}$$
 
-else, any $$\|v_{(j)}\|_2 \leq 1 $$ is in a subgradient
-
+else, any $$\|v_{(j)}\|_2$$ such that $$\|v_{(j)}\|_2 \leq 1 $$ belongs to the subdifferential $$\partial\|z_{(j)}\|_2$$
 
 If $$z_{(j)} = 0$$,  $$0 = z_{(j)} - \beta_{(j)} + \lambda t w_j \frac{z_{(j)}}{\|z_{(j)}\|_2}$$
 
