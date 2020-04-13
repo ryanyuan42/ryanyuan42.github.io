@@ -163,7 +163,7 @@ for i, gamma in enumerate([10, 50, 100, 500]):
 
 Screening rules are usually found by manipulating the KKT conditions. Many different algorithms have different screening rules.  
 
-We can do a screening on the data, i.e., screen out the points that $$\alpha_i = 0$$, because having them or not will not affect the final solution. Details can be found [here](http://proceedings.mlr.press/v28/ogawa13b.pdf)  
+For SVM, we can do a screening on the data, i.e., screen out the points that $$\alpha_i = 0$$, because having them or not will not affect the final solution. Details can be found [here](http://proceedings.mlr.press/v28/ogawa13b.pdf)  
 
 I chose not to put the code here because I found it not so useful: the points that can be discarded highly depend on the gamma and C the user pick, especially when the upper C and lower C is far away, no data points can be discarded.  
 
