@@ -161,6 +161,7 @@ for i, gamma in enumerate([10, 50, 100, 500]):
 
 # Screening Rules
 
+Screening rules are usually found by manipulating the KKT conditions. Many different algorithms have different screening rules.  
 
 We can do a screening on the data, i.e., screen out the points that $$\alpha_i = 0$$, because having them or not will not affect the final solution. Details can be found [here](http://proceedings.mlr.press/v28/ogawa13b.pdf)  
 
