@@ -115,6 +115,7 @@ def predict(new_X, alpha, b, X, y, gamma):
 
 
 def f(x, X_sv, y_sv, alpha_sv, gamma):
+    # this function is used for screening rules, not essential for svm implementation
     res = 0
     for a, sv_y, sv_x in zip(alpha_sv, y_sv, X_sv):
         res += a * sv_y * rbf(x, sv_x, gamma)
