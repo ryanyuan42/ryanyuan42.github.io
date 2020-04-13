@@ -38,7 +38,7 @@ $$wx_{sp}+b=1$$, where sp is a support vector with $$y=1$$
 
 $$wx_{sn}+b=-1$$, where sp is a support vector with $$y=-1$$
 
-
+$$b=1 - wx_{sp}$$, and $$b=-1 - wx_{sp}$$, using this logic, we can average all support vectors to get a stable estimate of $$b$$
 ## Code
 
 The following is a simple implementation of SVM with python.
