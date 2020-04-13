@@ -156,3 +156,6 @@ for i, gamma in enumerate([10, 50, 100, 500]):
         
 {% endhighlight %}
 
+
+![svm decision boundary with different gamma and C](https://raw.githubusercontent.com/ryanyuan42/ryanyuan42.github.io/master/assets/svm_decision_boundary.png)
+
