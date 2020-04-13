@@ -8,6 +8,7 @@ comments: true
 share: true
 ---
 
+## Problem
 
 Consider a SVM problem: 
 
@@ -25,9 +26,22 @@ $$\max_{\alpha} -\frac{1}{2} \alpha^T Y G Y \alpha + 1^T\alpha \\
 where $$G$$ is the kernel matrix
 
 
+Therefore, we can solve the problem with quardratic programming. We will be able to get $$\alpha$$ after quardratic programming.
 
-Therefore, we can solve the problem with quardratic programming.
+## Intercept
 
+We will need get the intercept $$\beta_0$$ to be able to make predictions. To calculate the intercept, we can average all the support 
+vectors. Methods can be found ![here](https://stats.stackexchange.com/questions/211310/deriving-the-intercept-term-in-a-linearly-separable-and-soft-margin-svm): 
+
+
+$$wx_{sp}+b=1$$, where sp is a support vector with $$y=1$$
+
+$$wx_{sn}+b=-1$$, where sp is a support vector with $$y=-1$$
+
+
+## Code
+
+The following is a simple implementation of SVM with python.
 
 {% highlight python %}
 @jit(nopython=True)
