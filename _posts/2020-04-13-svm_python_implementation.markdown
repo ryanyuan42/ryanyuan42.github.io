@@ -159,3 +159,13 @@ for i, gamma in enumerate([10, 50, 100, 500]):
 
 ![svm decision boundary with different gamma and C](https://raw.githubusercontent.com/ryanyuan42/ryanyuan42.github.io/master/assets/svm_decision_boundary.png)
 
+# Screening Rules
+
+
+We can do a screening on the data, i.e., screen out the points that $\alpha_i = 0$, because having them or not will not affect the final solution. Details can be found [here](http://proceedings.mlr.press/v28/ogawa13b.pdf)  
+
+I chose not to put the code here because I found it not so useful: the points that can be discarded highly depend on the gamma and C the user pick, especially when the upper C and lower C is far away, no data points can be discarded.  
+
+
+Maybe I get this conclusion only because I didn't test enough data sets especially on large ones. But the idea is simple: screen out all the data points that are not support vectors.
+
