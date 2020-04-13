@@ -132,7 +132,7 @@ fig, axes = plt.subplots(nrows=4, ncols=4, figsize=(20, 20))
 for i, gamma in enumerate([10, 50, 100, 500]):
     for j, C in enumerate([0.01, 0.1, 0.5, 1]):
         
-        alpha, b = result[(gamma, C)]
+        alpha, b, _, _ = result[(gamma, C)]
         axes[i, j].set_title("gamma=%d, C=%.2f" % (gamma, C))
         
         # create a mesh to plot in
