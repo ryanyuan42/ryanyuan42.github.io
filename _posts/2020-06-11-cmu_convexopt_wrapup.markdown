@@ -52,7 +52,7 @@ The convergence rate is the same as gradient descent.
 Normally, we have large data input, which makes it costly to compute the overall gradient, therefore, rather than calculating the overall
 gradient, we just calcualte the gradient on some random samples(mini-batch).
 
-The convergence of SGD is rather slow, and cannot adapt to strong convexity. The convergence rate is $$O(1/\varepsilon^{2})$$ and $$O(1/\varepsilon})$$ top
+The convergence of SGD is rather slow, and cannot adapt to strong convexity. The convergence rate is $$O(1/\varepsilon^{2})$$ and $$O(1/\varepsilon)$$ top
 
 There was a time when people believe that it's the best they can do, but it turns out that there's more that can be done by variance reduction and
 acceleration (SAG, SAGA, ADAM)
@@ -70,9 +70,9 @@ just keeps you going and drive you to find out what's next.
 
 I am going to put my homework files here. The homework 3 and 5 are rather simple and I didn't write it down as a pdf.
 
-[hw2!](https://github.com/ryanyuan42/ryanyuan42.github.io/raw/master/assets/convex_opt_hw2.pdf)  
+[hw2](https://github.com/ryanyuan42/ryanyuan42.github.io/raw/master/assets/convex_opt_hw2.pdf)  
 
-[hw4!](https://github.com/ryanyuan42/ryanyuan42.github.io/raw/master/assets/convex_opt_hw4.pdf)
+[hw4](https://github.com/ryanyuan42/ryanyuan42.github.io/raw/master/assets/convex_opt_hw4.pdf)
 
 
 I am going to start following the standford CS224n. It's a not a theoretical class like this but also very intriguing as it talks about the architechture
